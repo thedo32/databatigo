@@ -26,27 +26,43 @@ dfu = fu.load_users('users.csv')
 dfh = fu.load_users('hits.csv')
 dfh["hit_time"] = pd.to_datetime(dfh["hit_time"], errors="coerce")
 
+# Injecting CSS
+st.markdown(
+    """
+    <style>
+    .column {
+        border: 1px solid #cccccc;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
-col1, col2, col3 = st.columns(3,border=True)
+col1, col2, col3 = st.columns(3)
 
 # Overall metric
 with col1:
+    st.markdown('<div class="column">Column 1 content</div>', unsafe_allow_html=True)
     total_count = dfh["id"].count()  # Replace "count(id)" with appropriate syntax
     st.metric(label="Jumlah Pengunjung", value=total_count)
 
 # Metric for user_id > 0/login
 with col2:
+    st.markdown('<div class="column">Column 1 content</div>', unsafe_allow_html=True)
     dfh_non_zero = dfh[dfh["user_id"] > 0]  # Create a filtered DataFrame
     non_zero_count = dfh_non_zero["id"].count()
     st.metric(label="Jumlah Pengunjung Login", value=non_zero_count)
 
 # Metric for user_id == 0 /guest
 with col3:
+    st.markdown('<div class="column">Column 1 content</div>', unsafe_allow_html=True)
     dfh_zero = dfh[dfh["user_id"] == 0]  # Create a filtered DataFrame
     zero_count = dfh_zero["id"].count()
     st.metric(label="Jumlah Pengunjung Guest", value=zero_count)
 
-col4, col5, col6 = st.columns(3,border=True)
+col4, col5, col6 = st.columns(3)
 # Filter once for current and previous year
 current_year = datetime.now().year
 previous_year = current_year - 1
@@ -55,6 +71,7 @@ dfh_now = dfh[dfh["hit_time"].dt.year == current_year]  # Current year data
 dfh_prev = dfh[dfh["hit_time"].dt.year == previous_year]  # Previous year data
 
 with col4:
+    st.markdown('<div class="column">Column 1 content</div>', unsafe_allow_html=True)
     # Calculate total visitor counts
     total_count = dfh_now["id"].count()
     total_prev = dfh_prev["id"].count()
@@ -64,6 +81,7 @@ with col4:
     st.metric(label="Jumlah Pengunjung (Tahun Ini)", value=total_count, delta=f"{delta:.2f}%")
 
 with col5:
+    st.markdown('<div class="column">Column 1 content</div>', unsafe_allow_html=True)
     # Filter for logged-in users (user_id > 0)
     non_zero_count = dfh_now[dfh_now["user_id"] > 0]["id"].count()
     non_prev_count = dfh_prev[dfh_prev["user_id"] > 0]["id"].count()
@@ -73,6 +91,7 @@ with col5:
     st.metric(label="Jumlah Pengunjung Login (Tahun Ini)", value=non_zero_count, delta=f"{delta:.2f}%")
 
 with col6:
+    st.markdown('<div class="column">Column 1 content</div>', unsafe_allow_html=True)
     # Filter for guest users (user_id == 0)
     zero_count = dfh_now[dfh_now["user_id"] == 0]["id"].count()
     zero_prev = dfh_prev[dfh_prev["user_id"] == 0]["id"].count()
@@ -82,7 +101,7 @@ with col6:
     st.metric(label="Jumlah Pengunjung Guest (Tahun Ini)", value=zero_count, delta=f"{delta:.2f}%")
 
 
-col7, col8, col9 = st.columns(3,border=True)
+col7, col8, col9 = st.columns(3)
 # Get the current date
 now = datetime.now()
 
@@ -105,6 +124,7 @@ dfh_previous_month = dfh[
 ]
 
 with col7:
+    st.markdown('<div class="column">Column 1 content</div>', unsafe_allow_html=True)
     # Calculate total visitors
     total_count = dfh_current_month["id"].count()
     total_prev = dfh_previous_month["id"].count()
@@ -114,6 +134,7 @@ with col7:
     st.metric(label="Jumlah Pengunjung (Bulan Ini)", value=total_count, delta=f"{delta:.2f}%")
 
 with col8:
+    st.markdown('<div class="column">Column 1 content</div>', unsafe_allow_html=True)
     # Filter for logged-in users (user_id > 0)
     non_zero_count = dfh_current_month[dfh_current_month["user_id"] > 0]["id"].count()
     non_prev_count = dfh_previous_month[dfh_previous_month["user_id"] > 0]["id"].count()
@@ -123,6 +144,7 @@ with col8:
     st.metric(label="Jumlah Pengunjung Login (Bulan Ini)", value=non_zero_count, delta=f"{delta:.2f}%")
 
 with col9:
+    st.markdown('<div class="column">Column 1 content</div>', unsafe_allow_html=True)
     # Filter for guest users (user_id == 0)
     zero_count = dfh_current_month[dfh_current_month["user_id"] == 0]["id"].count()
     zero_prev = dfh_previous_month[dfh_previous_month["user_id"] == 0]["id"].count()
