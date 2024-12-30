@@ -26,6 +26,20 @@ dfu = fu.load_users('users.csv')
 dfh = fu.load_users('hits.csv')
 dfh["hit_time"] = pd.to_datetime(dfh["hit_time"], errors="coerce")
 
+# Injecting CSS for styling
+st.markdown(
+    """
+    <style>
+    .column {
+        border: 1px solid #cccccc;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 col1, col2, col3 = st.columns(3)
 
