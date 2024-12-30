@@ -53,7 +53,7 @@ with col3:
     st.markdown('</div>', unsafe_allow_html=True)
 
 
-col4, col5, col6 = st.columns(3,border=True)
+col4, col5, col6 = st.columns(3)
 # Filter once for current and previous year
 current_year = datetime.now().year
 previous_year = current_year - 1
@@ -94,7 +94,7 @@ with col6:
     st.metric(label="Jumlah Pengunjung Guest (Tahun Ini)", value=zero_count, delta=f"{delta:.2f}%")
     st.markdown('</div>', unsafe_allow_html=True)
 
-col7, col8, col9 = st.columns(3,border=True)
+col7, col8, col9 = st.columns(3)
 # Get the current date
 now = datetime.now()
 
