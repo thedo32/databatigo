@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9dbd861-4fc9-4c9b-b3d4-5342b9fc9a2a" name="Changes" comment="update 2024-12-31">
-      <change beforePath="$PROJECT_DIR$/BatigoData.py" beforeDir="false" afterPath="$PROJECT_DIR$/BatigoData.py" afterDir="false" />
-    </list>
+    <list default="true" id="b9dbd861-4fc9-4c9b-b3d4-5342b9fc9a2a" name="Changes" comment="update 2024-12-31" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -179,7 +177,23 @@
       <option name="project" value="LOCAL" />
       <updated>1735618479639</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="update 2024-12-31">
+      <option name="closed" value="true" />
+      <created>1735618692889</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1735618692889</updated>
+    </task>
+    <task id="LOCAL-00015" summary="update 2024-12-31">
+      <option name="closed" value="true" />
+      <created>1735618707366</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1735618707366</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
