@@ -30,7 +30,7 @@ dfh["hit_time"] = pd.to_datetime(dfh["hit_time"], errors="coerce")
 st.markdown(
     """
     <style>
-    .styled-column {
+    .column {
         border: 1px solid #cccccc;
         padding: 10px;
         border-radius: 5px;
