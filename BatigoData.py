@@ -26,7 +26,7 @@ dfu = fu.load_users('users.csv')
 dfh = fu.load_users('hits.csv')
 dfh["hit_time"] = pd.to_datetime(dfh["hit_time"], errors="coerce")
 
-# Injecting CSS for styling
+# Inject CSS for styling
 st.markdown(
     """
     <style>
@@ -35,133 +35,90 @@ st.markdown(
         padding: 10px;
         border-radius: 5px;
         background-color: #000000;
+        color: #ffffff;
+        text-align: center;
     }
     </style>
     """,
     unsafe_allow_html=True
 )
 
+# Display metrics: Total, Logged-In, and Guest visitors
 col1, col2, col3 = st.columns(3)
 
-# Overall metric
+# Total visitors
 with col1:
-    total_count = dfh["id"].count()  # Replace "count(id)" with appropriate syntax
-    st.markdown('<div class="column">', unsafe_allow_html=True)
-    st.metric(label="Jumlah Pengunjung", value=total_count)
-    st.markdown('</div>', unsafe_allow_html=True)
+    total_count = dfh["id"].count()
+    st.markdown(f'<div class="column">Jumlah Pengunjung<br><strong>{total_count}</strong></div>', unsafe_allow_html=True)
 
-# Metric for user_id > 0/login
+# Logged-in users
 with col2:
-    dfh_non_zero = dfh[dfh["user_id"] > 0]  # Create a filtered DataFrame
-    non_zero_count = dfh_non_zero["id"].count()
-    st.markdown('<div class="column">', unsafe_allow_html=True)
-    st.metric(label="Jumlah Pengunjung Login", value=non_zero_count)
-    st.markdown('</div>', unsafe_allow_html=True)
+    non_zero_count = dfh[dfh["user_id"] > 0]["id"].count()
+    st.markdown(f'<div class="column">Jumlah Pengunjung Login<br><strong>{non_zero_count}</strong></div>', unsafe_allow_html=True)
 
-# Metric for user_id == 0 /guest
+# Guest users
 with col3:
-    dfh_zero = dfh[dfh["user_id"] == 0]  # Create a filtered DataFrame
-    zero_count = dfh_zero["id"].count()
-    st.markdown('<div class="column">', unsafe_allow_html=True)
-    st.metric(label="Jumlah Pengunjung Guest", value=zero_count)
-    st.markdown('</div>', unsafe_allow_html=True)
+    zero_count = dfh[dfh["user_id"] == 0]["id"].count()
+    st.markdown(f'<div class="column">Jumlah Pengunjung Guest<br><strong>{zero_count}</strong></div>', unsafe_allow_html=True)
 
-
+# Metrics for current and previous year
 col4, col5, col6 = st.columns(3)
-# Filter once for current and previous year
+
 current_year = datetime.now().year
 previous_year = current_year - 1
 
-dfh_now = dfh[dfh["hit_time"].dt.year == current_year]  # Current year data
-dfh_prev = dfh[dfh["hit_time"].dt.year == previous_year]  # Previous year data
+# Filter data for current and previous year
+dfh_now = dfh[dfh["hit_time"].dt.year == current_year]
+dfh_prev = dfh[dfh["hit_time"].dt.year == previous_year]
 
 with col4:
-    # Calculate total visitor counts
     total_count = dfh_now["id"].count()
     total_prev = dfh_prev["id"].count()
-
-    # Avoid division by zero
     delta = ((total_count - total_prev) / total_prev * 100) if total_prev != 0 else 0
-    st.markdown('<div class="column">', unsafe_allow_html=True)
-    st.metric(label="Jumlah Pengunjung (Tahun Ini)", value=total_count, delta=f"{delta:.2f}%")
-    st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="column">Jumlah Pengunjung (Tahun Ini)<br><strong>{total_count}</strong><br><small>Delta: {delta:.2f}%</small></div>', unsafe_allow_html=True)
 
 with col5:
-    # Filter for logged-in users (user_id > 0)
     non_zero_count = dfh_now[dfh_now["user_id"] > 0]["id"].count()
     non_prev_count = dfh_prev[dfh_prev["user_id"] > 0]["id"].count()
-
-    # Avoid division by zero
     delta = ((non_zero_count - non_prev_count) / non_prev_count * 100) if non_prev_count != 0 else 0
-    st.markdown('<div class="column">', unsafe_allow_html=True)
-    st.metric(label="Jumlah Pengunjung Login (Tahun Ini)", value=non_zero_count, delta=f"{delta:.2f}%")
-    st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="column">Jumlah Pengunjung Login (Tahun Ini)<br><strong>{non_zero_count}</strong><br><small>Delta: {delta:.2f}%</small></div>', unsafe_allow_html=True)
 
 with col6:
-    # Filter for guest users (user_id == 0)
     zero_count = dfh_now[dfh_now["user_id"] == 0]["id"].count()
     zero_prev = dfh_prev[dfh_prev["user_id"] == 0]["id"].count()
-
-    # Avoid division by zero
     delta = ((zero_count - zero_prev) / zero_prev * 100) if zero_prev != 0 else 0
-    st.markdown('<div class="column">', unsafe_allow_html=True)
-    st.metric(label="Jumlah Pengunjung Guest (Tahun Ini)", value=zero_count, delta=f"{delta:.2f}%")
-    st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="column">Jumlah Pengunjung Guest (Tahun Ini)<br><strong>{zero_count}</strong><br><small>Delta: {delta:.2f}%</small></div>', unsafe_allow_html=True)
 
+# Metrics for current and previous month
 col7, col8, col9 = st.columns(3)
-# Get the current date
+
 now = datetime.now()
-
-# Current and previous month
 current_month = now.month
-previous_month = current_month - 1
+previous_month = current_month - 1 if current_month > 1 else 12
 current_year = now.year
-previous_year = current_year if previous_month > 0 else current_year - 1
-if previous_month == 0:
-    previous_month = 12
+previous_year = current_year if previous_month != 12 else current_year - 1
 
-# Filter the DataFrame for the current month
-dfh_current_month = dfh[
-    (dfh["hit_time"].dt.month == current_month) & (dfh["hit_time"].dt.year == current_year)
-]
-
-# Filter the DataFrame for the previous month
-dfh_previous_month = dfh[
-    (dfh["hit_time"].dt.month == previous_month) & (dfh["hit_time"].dt.year == previous_year)
-]
+# Filter data for current and previous month
+dfh_current_month = dfh[(dfh["hit_time"].dt.month == current_month) & (dfh["hit_time"].dt.year == current_year)]
+dfh_previous_month = dfh[(dfh["hit_time"].dt.month == previous_month) & (dfh["hit_time"].dt.year == previous_year)]
 
 with col7:
-    # Calculate total visitors
     total_count = dfh_current_month["id"].count()
     total_prev = dfh_previous_month["id"].count()
-
-    # Avoid division by zero
     delta = ((total_count - total_prev) / total_prev * 100) if total_prev != 0 else 0
-    st.markdown('<div class="column">', unsafe_allow_html=True)
-    st.metric(label="Jumlah Pengunjung (Bulan Ini)", value=total_count, delta=f"{delta:.2f}%")
-    st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="column">Jumlah Pengunjung (Bulan Ini)<br><strong>{total_count}</strong><br><small>Delta: {delta:.2f}%</small></div>', unsafe_allow_html=True)
 
 with col8:
-    # Filter for logged-in users (user_id > 0)
     non_zero_count = dfh_current_month[dfh_current_month["user_id"] > 0]["id"].count()
     non_prev_count = dfh_previous_month[dfh_previous_month["user_id"] > 0]["id"].count()
-
-    # Avoid division by zero
     delta = ((non_zero_count - non_prev_count) / non_prev_count * 100) if non_prev_count != 0 else 0
-    st.markdown('<div class="column">', unsafe_allow_html=True)
-    st.metric(label="Jumlah Pengunjung Login (Bulan Ini)", value=non_zero_count, delta=f"{delta:.2f}%")
-    st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="column">Jumlah Pengunjung Login (Bulan Ini)<br><strong>{non_zero_count}</strong><br><small>Delta: {delta:.2f}%</small></div>', unsafe_allow_html=True)
 
 with col9:
-    # Filter for guest users (user_id == 0)
     zero_count = dfh_current_month[dfh_current_month["user_id"] == 0]["id"].count()
     zero_prev = dfh_previous_month[dfh_previous_month["user_id"] == 0]["id"].count()
-
-    # Avoid division by zero
     delta = ((zero_count - zero_prev) / zero_prev * 100) if zero_prev != 0 else 0
-    st.markdown('<div class="column">', unsafe_allow_html=True)
-    st.metric(label="Jumlah Pengunjung Guest (Bulan Ini)", value=zero_count, delta=f"{delta:.2f}%")
-    st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="column">Jumlah Pengunjung Guest (Bulan Ini)<br><strong>{zero_count}</strong><br><small>Delta: {delta:.2f}%</small></div>', unsafe_allow_html=True)
 
 st.divider()
 
