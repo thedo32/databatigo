@@ -43,7 +43,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
+st.container()
 col1, col2, col3 = st.columns(3,border=True)
 
 # Overall metric
