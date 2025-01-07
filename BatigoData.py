@@ -43,7 +43,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-st.container()
+
 col1, col2, col3 = st.columns(3,border=True)
 
 # Overall metric
@@ -154,7 +154,7 @@ with col9:
 
 st.divider()
 
-tab1, tab2 = st.tabs(["Pengguna Terdaftar", "Jumlah Kunjungan Ke Website"])
+tab1, tab2, tab3 = st.tabs(["Pengguna Terdaftar", "Jumlah Kunjungan per Halaman", "Jumlah Kunjungan per Wilayah"])
 with tab1:
 
     interactive_table(dfu,
@@ -162,7 +162,135 @@ with tab1:
                       select=False,
                       buttons=['copyHtml5', 'csvHtml5', 'excelHtml5', 'colvis'])
 
-with (tab2):
+#kunjungan per halaman
+with tab2:
+    # Altair Chart
+
+    # filter other or unknown
+    df = dfh[~dfh['title'].isin(["Other", "Unknown", "Login", "Register"])]
+
+    all_countries = df['country'].unique().tolist()
+
+    selection = alt.selection_point(fields=['country'], bind='legend')
+
+    bars = alt.Chart(df).mark_bar(size=6).encode(
+        x=alt.X(
+            "title:N",
+            title="Judul Halaman",
+            axis=alt.Axis(labelAngle=90),
+            sort=alt.EncodingSortField(field="id", op="count", order="descending")
+        ),
+        y=alt.Y("count(id):Q", title="Jumlah Kunjungan"),  # Count occurrences by city
+        xOffset=alt.X("country:N", title="Country"),  # Group by country
+        color=alt.Color(
+            "country:N",
+            title="Negara",
+            scale=alt.Scale(domain=all_countries),  # Explicitly set domain
+            legend=alt.Legend(title="Pilih Negara")
+        ),  # Different colors for each country
+        tooltip=["country", "title", "count(id)"]  # Add tooltips for interactivity
+    ).add_params(selection).transform_filter(selection).properties(
+        height=800,
+        width=1200
+    ).interactive(bind_x=True, bind_y=True)
+
+    st.altair_chart(bars)
+
+    st.divider()
+
+    df = df.copy()
+    df['trunc_title'] = df['title'].apply(lambda x: x if len(x) <= 10 else x[:10] + '...')
+
+    colA, colB, colC = st.columns(3)
+    with colA:
+        st.markdown("<h4 style='text-align: center;'>Top 10 Halaman/Menu</h4>", unsafe_allow_html=True)
+
+
+        # Select the top 10 cities (you can define criteria, e.g., most frequent)
+        top_10_pages = df['title'].value_counts().head(10).index.tolist()
+
+        # Filter the DataFrame to include only these top 10 cities
+        filtered_df = df[df['title'].isin(top_10_pages)]
+
+        bars = alt.Chart(filtered_df).mark_bar(size=30).encode(
+            x=alt.X(
+                "trunc_title:N",
+                title=("Top 10 Halaman Dikunjungi"),
+                axis=alt.Axis(labelAngle=90),
+                sort=alt.EncodingSortField(field="id", op="count", order="descending")
+            ),
+            y=alt.Y("count(id):Q", title="Jumlah Kunjungan"),  # Count occurrences by city
+            # Different colors for each country
+            tooltip=["title", "count(id)"]  # Add tooltips for interactivity
+        ).properties(
+            height=400,
+            width=400
+        ).interactive(bind_x=True, bind_y=True)
+
+        st.altair_chart(bars)
+
+
+    with colB:
+        st.markdown("<h4 style='text-align: center;'>Top 10 diakses Dalam Negri</h4>", unsafe_allow_html=True)
+
+        # Filter rows where the country is "Indonesia"
+        indonesia_pages = df[df['country'] == 'Indonesia']
+
+        # Select the top 10 cities (you can define criteria, e.g., most frequent)
+        top_10_pages = indonesia_pages['title'].value_counts().head(10).index.tolist()
+
+        # Filter the DataFrame to include only these top 10 cities
+        filtered_df = indonesia_pages[indonesia_pages['title'].isin(top_10_pages)]
+
+        bars = alt.Chart(filtered_df).mark_bar(size=30).encode(
+            x=alt.X(
+                "trunc_title:N",
+                title="Judul Halaman",
+                axis=alt.Axis(labelAngle=90),
+                sort=alt.EncodingSortField(field="id", op="count", order="descending")
+            ),
+            y=alt.Y("count(id):Q", title="Jumlah Kunjungan"),  # Count occurrences by city
+            # Different colors for each country
+            tooltip=[ "title", "count(id)"]  # Add tooltips for interactivity
+        ).properties(
+            height=400,
+            width=400
+        ).interactive(bind_x=True, bind_y=True)
+
+        st.altair_chart(bars)
+
+    with colC:
+        st.markdown("<h4 style='text-align: center;'>Top 10 Halaman diakses Luar Negeri</h4>", unsafe_allow_html=True)
+
+        # Filter rows where the country is outside "Indonesia"
+        abroad_cities = df[df['country'] != 'Indonesia']
+
+        # Select the top 10 cities (you can define criteria, e.g., most frequent)
+        top_10_pages = abroad_cities['title'].value_counts().head(10).index.tolist()
+
+        # Filter the DataFrame to include only these top 10 cities
+        filtered_df = abroad_cities[abroad_cities['title'].isin(top_10_pages)]
+
+        bars = alt.Chart(filtered_df).mark_bar(size=30).encode(
+            x=alt.X(
+                "trunc_title:N",
+                title="Judul Halaman",
+                axis=alt.Axis(labelAngle=90),
+                sort=alt.EncodingSortField(field="id", op="count", order="descending")
+            ),
+            y=alt.Y("count(id):Q", title="Jumlah Kunjungan"),  # Count occurrences by city
+            # Different colors for each country
+            tooltip=["title", "count(id)"]  # Add tooltips for interactivity
+        ).properties(
+            height=400,
+            width=400
+        ).interactive(bind_x=True, bind_y=True)
+
+        st.altair_chart(bars)
+
+#kunjungan per wilayah
+
+with (tab3):
     # Altair Chart
 
     # filter other or unknown
@@ -197,11 +325,11 @@ with (tab2):
 
     st.divider()
 
-
+    df = df.copy()
     df['trunc_city'] = df['city'].apply(lambda x: x if len(x) <= 10 else x[:10] + '...')
 
-    colA, colB, colC = st.columns(3)
-    with colA:
+    colD, colE, colF = st.columns(3)
+    with colD:
         st.markdown("<h3 style='text-align: center;'>Top 10 Kota</h3>", unsafe_allow_html=True)
 
 
@@ -229,7 +357,7 @@ with (tab2):
         st.altair_chart(bars)
 
 
-    with colB:
+    with colE:
         st.markdown("<h3 style='text-align: center;'>Top 10 Kota Indonesia</h3>", unsafe_allow_html=True)
 
         # Filter rows where the country is "Indonesia"
@@ -258,7 +386,7 @@ with (tab2):
 
         st.altair_chart(bars)
 
-    with colC:
+    with colF:
         st.markdown("<h3 style='text-align: center;'>Top 10 Kota Luar Negeri</h3>", unsafe_allow_html=True)
 
         # Filter rows where the country is outside "Indonesia"
