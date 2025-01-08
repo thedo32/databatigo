@@ -1160,6 +1160,7 @@ id,user_id,title,ip_address,referrer,agent,utm_source,utm_medium,hit_time,city,c
 3459,0,Home,103.247.9.9,,Other,,,2024-10-15T00:25:39.000Z,Other,Indonesia
 2949,0,Home,103.247.9.9,,Other,,,2024-09-20T00:51:45.000Z,Other,Indonesia
 4485,0,Home,2001:4860:7:506::fd,https://www.google.com/,Chrome 131.0.0.0,,,2024-12-17T06:30:07.000Z,Other,Indonesia
+4999,0,Home,103.247.9.9,,Other,,,2025-01-07T23:53:45.000Z,Other,Indonesia
 4744,0,Home,103.247.9.9,,Other,,,2024-12-30T23:22:04.000Z,Other,Indonesia
 2441,0,Home,103.247.9.9,,Other,,,2024-09-02T23:14:41.000Z,Other,Indonesia
 3210,0,Home,103.247.9.9,,Other,,,2024-10-03T00:48:17.000Z,Other,Indonesia
@@ -1727,6 +1728,7 @@ id,user_id,title,ip_address,referrer,agent,utm_source,utm_medium,hit_time,city,c
 2042,0,Home,212.143.94.254,,Chrome 122.0.0.0,,,2024-08-19T19:51:21.000Z,Modi‘in Makkabbim Re‘ut,Israel
 4416,0,Home,84.17.59.70,http://mail.kopibatigo.id/,Chrome 130.0.0.0,,,2024-12-14T12:00:16.000Z,Milan,Italy
 4417,0,Home,15.160.46.102,https://mail.kopibatigo.id/,Chrome 125.0.0.0,,,2024-12-14T12:06:23.000Z,Milan,Italy
+4974,0,Home Eng,178.249.211.74,,,,,2025-01-07T06:56:11.000Z,Milan,Italy
 2456,0,Home Eng,35.219.235.76,,,,,2024-09-03T18:55:39.000Z,Milan,Italy
 2457,0,Home,35.219.235.76,,Chrome 124.0.0.0,,,2024-09-03T18:55:45.000Z,Milan,Italy
 3854,0,Home,54.199.221.196,,Chrome 85.0.4183.121,,,2024-11-08T11:28:24.000Z,Tokyo,Japan
@@ -1869,6 +1871,7 @@ id,user_id,title,ip_address,referrer,agent,utm_source,utm_medium,hit_time,city,c
 4479,0,Home,130.255.166.115,http://kopibatigo.id/,Chrome 121.0.0.0,,,2024-12-16T20:37:25.000Z,Other,Sweden
 2690,0,Home,192.36.109.86,https://kupibatigo.id/,Firefox 115,,,2024-09-08T15:13:09.000Z,Other,Sweden
 4740,0,Home,5.133.192.138,,Chrome 105.0.0.0,,,2024-12-30T19:57:58.000Z,Other,Sweden
+5003,0,Home,130.255.166.51,https://kupibatigo.id/,Firefox 123,,,2025-01-08T02:57:23.000Z,Other,Sweden
 4494,0,Home,5.133.192.127,,Chrome 105.0.0.0,,,2024-12-18T05:56:24.000Z,Other,Sweden
 2718,0,Home,5.133.192.175,http://kopibatigo.id/,Chrome 112.0.5615.136,,,2024-09-10T08:24:48.000Z,Other,Sweden
 3240,0,Home,5.133.192.189,https://kupibatigo.id/,Safari 605.1.1,,,2024-10-04T16:10:44.000Z,Other,Sweden
@@ -1952,6 +1955,8 @@ id,user_id,title,ip_address,referrer,agent,utm_source,utm_medium,hit_time,city,c
 2122,0,Wisata,23.236.105.43,https://www.kopibatigo.id/taluak/index/6,Chrome 127.0.0.0,,,2024-08-22T17:44:48.000Z,Other,United Kingdom
 4683,0,Home,2a06:4883:d000::fc,,Mozilla 5.0,,,2024-12-28T12:20:55.000Z,Other,United Kingdom
 4696,0,Home,2a06:4882:1000::1e,http://[2001:df1:7800:2::3:633c],Mozilla 5.0,,,2024-12-29T09:49:53.000Z,Other,United Kingdom
+4984,0,Home,2a06:4883:d000::e1,http://[2001:df1:7800:2::3:633c],Mozilla 5.0,,,2025-01-07T13:13:23.000Z,Other,United Kingdom
+4993,0,Home,2a06:4883:d000::e7,,Mozilla 5.0,,,2025-01-07T20:54:07.000Z,Other,United Kingdom
 4745,0,Home,2a06:4882:1000::23,https://www.kupibatigo.id.kopibatigo.id,Mozilla 5.0,,,2024-12-31T00:12:05.000Z,Other,United Kingdom
 4765,0,Home,87.236.176.186,,Mozilla 5.0,,,2024-12-31T18:20:09.000Z,Other,United Kingdom
 4777,0,Home,2a06:4883:9000::b4,http://[2001:df1:7800:2::3:633c],Mozilla 5.0,,,2025-01-01T10:46:36.000Z,Other,United Kingdom
@@ -2070,9 +2075,15 @@ id,user_id,title,ip_address,referrer,agent,utm_source,utm_medium,hit_time,city,c
 3175,0,Home,98.81.164.151,,Chrome 85.0.4182.0,,,2024-09-29T10:32:29.000Z,Ashburn,United States
 3181,0,Home,3.92.40.244,,Chrome 58.0.3029.110,,,2024-09-30T01:38:43.000Z,Ashburn,United States
 3437,0,Home,154.28.229.86,,Chrome 117.0.0.0,,,2024-10-14T10:52:11.000Z,Ashburn,United States
+4975,0,Home,54.198.55.229,,Mozilla 5.0,,,2025-01-07T07:27:01.000Z,Ashburn,United States
+4976,0,Home,54.156.251.192,,Mozilla 5.0,,,2025-01-07T07:27:01.000Z,Ashburn,United States
+4977,0,Home Eng,54.156.251.192,,,,,2025-01-07T07:27:02.000Z,Ashburn,United States
 2674,0,Home,35.175.199.149,,Chrome 126.0.0.0,,,2024-09-08T06:28:45.000Z,Ashburn,United States
 2675,0,Home,54.237.199.134,,Chrome 126.0.0.0,,,2024-09-08T06:32:18.000Z,Ashburn,United States
 2676,0,Home,18.212.75.199,,Chrome 126.0.0.0,,,2024-09-08T06:35:38.000Z,Ashburn,United States
+4980,0,Home Eng,54.88.179.33,,,,,2025-01-07T12:02:30.000Z,Ashburn,United States
+4981,0,Home Eng,35.171.144.152,,,,,2025-01-07T12:02:34.000Z,Ashburn,United States
+4982,0,Home Eng,54.88.179.33,,,,,2025-01-07T12:02:36.000Z,Ashburn,United States
 2679,0,Home,3.85.202.237,,Chrome 126.0.0.0,,,2024-09-08T13:04:23.000Z,Ashburn,United States
 2680,0,Home,44.220.146.246,,Chrome 126.0.0.0,,,2024-09-08T13:08:20.000Z,Ashburn,United States
 3448,0,Home,54.158.238.210,,Safari 604.1,,,2024-10-14T10:56:28.000Z,Ashburn,United States
@@ -2537,9 +2548,14 @@ id,user_id,title,ip_address,referrer,agent,utm_source,utm_medium,hit_time,city,c
 3455,0,Login,104.198.189.226,,Chrome 127.0.0.0,,,2024-10-14T17:43:06.000Z,Council Bluffs,United States
 3457,0,Home Eng,104.198.189.226,http://en.kopibatigo.id/,,,,2024-10-14T22:54:09.000Z,Council Bluffs,United States
 3458,0,Login Eng,104.198.189.226,,,,,2024-10-14T22:54:09.000Z,Council Bluffs,United States
+4994,0,Home,34.44.221.77,,Chrome 59.0.3071.104,,,2025-01-07T21:30:38.000Z,Council Bluffs,United States
+4995,0,Home,34.44.221.77,,Firefox 4.0.1,,,2025-01-07T21:30:43.000Z,Council Bluffs,United States
 3460,0,Home,34.132.103.111,https://kupibatigo.id.kopibatigo.id/,Chrome 127.0.0.0,,,2024-10-15T04:52:22.000Z,Council Bluffs,United States
+4996,0,Home,34.44.221.77,,Safari 601.1,,,2025-01-07T21:31:08.000Z,Council Bluffs,United States
 3461,0,Home,34.132.103.111,https://kupibatigo.id/,Chrome 127.0.0.0,,,2024-10-15T04:52:22.000Z,Council Bluffs,United States
+4997,0,Home,34.44.221.77,,Firefox 3.1,,,2025-01-07T21:31:32.000Z,Council Bluffs,United States
 3462,0,Login,34.132.103.111,,Chrome 127.0.0.0,,,2024-10-15T04:52:22.000Z,Council Bluffs,United States
+4998,0,Home,34.44.221.77,,Other,,,2025-01-07T21:31:57.000Z,Council Bluffs,United States
 3463,0,Login,34.132.103.111,,Chrome 127.0.0.0,,,2024-10-15T04:52:22.000Z,Council Bluffs,United States
 3980,0,Home,35.202.44.209,http://mail.kopibatigo.id/,Chrome 127.0.0.0,,,2024-11-16T16:54:21.000Z,Council Bluffs,United States
 3981,0,Login,35.202.44.209,,Chrome 127.0.0.0,,,2024-11-16T16:54:21.000Z,Council Bluffs,United States
@@ -2705,7 +2721,9 @@ id,user_id,title,ip_address,referrer,agent,utm_source,utm_medium,hit_time,city,c
 2669,0,Home,104.166.80.134,,Firefox 120.0,,,2024-09-08T00:36:30.000Z,Los Angeles,United States
 2419,0,Home,104.166.80.117,,Firefox 120.0,,,2024-09-02T14:35:08.000Z,Los Angeles,United States
 2420,0,Home,104.166.80.34,,Firefox 120.0,,,2024-09-02T14:37:24.000Z,Los Angeles,United States
+4985,0,Home,104.166.80.87,,Firefox 120.0,,,2025-01-07T14:55:14.000Z,Los Angeles,United States
 2682,0,Home,104.166.80.45,,Firefox 120.0,,,2024-09-08T13:24:08.000Z,Los Angeles,United States
+4986,0,Home,104.166.80.34,,Firefox 120.0,,,2025-01-07T15:24:47.000Z,Los Angeles,United States
 3712,0,Home,104.166.80.164,,Firefox 120.0,,,2024-11-02T14:56:03.000Z,Los Angeles,United States
 1666,0,Home,192.0.118.112,https://kopibatigo.id/,Other,,,2024-08-12T09:31:22.000Z,Los Angeles,United States
 3203,0,Home,104.166.80.92,,Firefox 120.0,,,2024-10-02T14:12:25.000Z,Los Angeles,United States
@@ -2804,6 +2822,7 @@ id,user_id,title,ip_address,referrer,agent,utm_source,utm_medium,hit_time,city,c
 3415,0,Home,206.189.204.139,,Chrome 126.0.0.0,,,2024-10-12T21:30:12.000Z,North Bergen,United States
 3932,0,Home,159.89.231.17,,Chrome 129.0.0.0,,,2024-11-13T01:58:21.000Z,North Bergen,United States
 4963,0,Home Eng,2604:a880:400:d0::2309:5001,,,,,2025-01-07T02:00:20.000Z,North Bergen,United States
+4991,0,Home Eng,147.182.218.64,,,,,2025-01-07T18:20:05.000Z,North Bergen,United States
 2689,0,Home Eng,159.203.185.129,,,,,2024-09-08T15:09:02.000Z,North Bergen,United States
 4746,0,Home,159.223.131.9,,Mozilla 5.0,,,2024-12-31T01:27:18.000Z,North Bergen,United States
 2198,0,Home Eng,147.182.168.87,,,,,2024-08-26T12:37:36.000Z,North Bergen,United States
@@ -3129,6 +3148,7 @@ id,user_id,title,ip_address,referrer,agent,utm_source,utm_medium,hit_time,city,c
 2163,0,Home,2602:80d:1003::3b,,Mozilla 5.0,,,2024-08-25T01:19:58.000Z,Other,United States
 4211,0,Home,66.249.75.199,,Googlebot,,,2024-11-30T14:25:02.000Z,Other,United States
 4723,0,Home,2620:96:e000::100,,Other,,,2024-12-30T12:03:05.000Z,Other,United States
+4979,0,Home,66.249.75.197,,Googlebot,,,2025-01-07T09:18:33.000Z,Other,United States
 1908,0,Wisata Kupi Batigo - Paket Trip Ke Pulau Sirandah,157.55.39.200,,Bing,,,2024-08-16T08:58:31.000Z,Other,United States
 2164,0,Home,2602:80d:1002::16,,Other,,,2024-08-25T01:35:24.000Z,Other,United States
 3444,0,Home,205.169.39.224,,Chrome 79.0.3945.79,,,2024-10-14T10:53:26.000Z,Other,United States
@@ -3158,17 +3178,21 @@ id,user_id,title,ip_address,referrer,agent,utm_source,utm_medium,hit_time,city,c
 4730,0,Home,2602:80d:1003::3e,,Mozilla 5.0,,,2024-12-30T17:17:18.000Z,Other,United States
 2171,0,Home,2602:80d:1005::1e,,Mozilla 5.0,,,2024-08-25T08:44:29.000Z,Other,United States
 3707,0,Home,205.169.39.227,,Chrome 79.0.3945.79,,,2024-11-02T13:55:53.000Z,Other,United States
+4987,0,Home,2602:80d:1000::6f,,Other,,,2025-01-07T16:19:04.000Z,Other,United States
 2684,0,Home,198.235.24.129,,Other,,,2024-09-08T14:59:38.000Z,Other,United States
 3452,0,Home,205.169.39.12,,Chrome 117.0.5938.132,,,2024-10-14T13:03:42.000Z,Other,United States
 3708,0,Home,205.169.39.240,,Chrome 79.0.3945.79,,,2024-11-02T13:56:01.000Z,Other,United States
+4988,0,Home,2602:80d:1000::6f,,Mozilla 5.0,,,2025-01-07T16:19:08.000Z,Other,United States
 2173,0,Home,205.210.31.171,http://203.175.9.43:80/,Other,,,2024-08-25T11:28:09.000Z,Other,United States
 3197,0,Home,2602:80d:1000::10,,Mozilla 5.0,,,2024-10-01T19:25:00.000Z,Other,United States
 3453,0,Home,205.169.39.14,,Chrome 117.0.5938.132,,,2024-10-14T13:03:47.000Z,Other,United States
 3709,0,Home,205.169.39.128,https://kopibatigo.id/,Chrome 79.0.3945.79,,,2024-11-02T13:56:10.000Z,Other,United States
+4989,0,Home,2602:80d:1006::20,,Other,,,2025-01-07T16:36:17.000Z,Other,United States
 2174,0,Kupi Batigo Tour - Camping Space and Food,207.46.13.127,,,,,2024-08-25T13:39:57.000Z,Other,United States
 2430,0,Home,2602:80d:1003::2f,,Other,,,2024-09-02T18:45:41.000Z,Other,United States
 3966,0,Home,66.249.71.9,,Googlebot,,,2024-11-15T22:59:14.000Z,Other,United States
 4478,0,Home,2602:80d:1003::12,,Mozilla 5.0,,,2024-12-16T20:21:24.000Z,Other,United States
+4990,0,Home,2602:80d:1006::20,,Mozilla 5.0,,,2025-01-07T16:36:28.000Z,Other,United States
 2175,0,Home,66.249.75.105,,Googlebot,,,2024-08-25T13:55:45.000Z,Other,United States
 2431,0,Home,2602:80d:1003::2f,,Mozilla 5.0,,,2024-09-02T18:45:45.000Z,Other,United States
 4223,0,Home,47.89.195.210,https://www.kupibatigo.id.kopibatigo.id/,Chrome 103.0.5060.114,,,2024-12-01T11:17:45.000Z,Other,United States
@@ -3176,6 +3200,7 @@ id,user_id,title,ip_address,referrer,agent,utm_source,utm_medium,hit_time,city,c
 2944,0,Home,157.55.39.201,,Bing,,,2024-09-19T22:33:03.000Z,Other,United States
 4224,0,Home,66.249.71.1,,Googlebot,,,2024-12-01T19:16:08.000Z,Other,United States
 4480,0,Home,2620:0:9c0:10:3124:525b:e4a1:596c,,Mozilla 5.0,,,2024-12-16T22:35:51.000Z,Other,United States
+4992,0,Home,2602:80d:1006::6d,,Mozilla 5.0,,,2025-01-07T18:57:24.000Z,Other,United States
 2433,0,Login,207.46.13.78,,Bing,,,2024-09-02T21:18:26.000Z,Other,United States
 3969,0,Home,199.244.88.223,http://kopibatigo.id,Chrome 105.0.0.0,,,2024-11-16T01:46:22.000Z,Other,United States
 4225,0,Home,66.249.65.41,,Googlebot,,,2024-12-01T22:02:29.000Z,Other,United States
@@ -3206,10 +3231,14 @@ id,user_id,title,ip_address,referrer,agent,utm_source,utm_medium,hit_time,city,c
 2184,0,Home,198.235.24.34,,Other,,,2024-08-25T21:22:09.000Z,Other,United States
 3976,0,Home,2602:80d:1000::58,,Mozilla 5.0,,,2024-11-16T12:14:04.000Z,Other,United States
 4488,0,Home,66.249.71.9,,Googlebot,,,2024-12-17T12:43:18.000Z,Other,United States
+5000,0,Home,104.152.52.55,,Other,,,2025-01-08T00:44:30.000Z,Other,United States
+5001,0,Home,2620:96:e000::c1,,Mozilla 5.0,,,2025-01-08T01:08:49.000Z,Other,United States
+5002,0,Home,104.152.52.59,,Other,,,2025-01-08T01:22:00.000Z,Other,United States
 2699,0,Home,198.235.24.25,http://203.175.9.43:80/,Other,,,2024-09-09T08:37:05.000Z,Other,United States
 1932,0,Wisata Kupi Batigo - Paket Trip Ke Pulau Sirandah,207.46.13.111,,Bing,,,2024-08-17T03:40:13.000Z,Other,United States
 2188,0,Home,198.235.24.148,,Other,,,2024-08-25T22:33:55.000Z,Other,United States
 3724,0,Home,2602:80d:1005::1c,,Mozilla 5.0,,,2024-11-02T20:38:49.000Z,Other,United States
+5004,0,Home,157.55.39.6,,Bing,,,2025-01-08T03:13:53.000Z,Other,United States
 2189,0,Home,157.55.39.62,,Bing,,,2024-08-26T02:20:02.000Z,Other,United States
 3725,0,Home,2602:80d:1003::21,,Mozilla 5.0,,,2024-11-02T20:58:28.000Z,Other,United States
 3471,0,Home,2602:80d:1006::11,,Mozilla 5.0,,,2024-10-16T01:28:02.000Z,Other,United States
@@ -3656,6 +3685,7 @@ id,user_id,title,ip_address,referrer,agent,utm_source,utm_medium,hit_time,city,c
 3939,0,Home,2604:a880:2:d1::63c:b001,,Safari 605.1.15,,,2024-11-13T23:17:23.000Z,Santa Clara,United States
 3940,0,Home,2604:a880:2:d1::4fa:6001,,Chrome 83.0.4103.61,,,2024-11-13T23:17:24.000Z,Santa Clara,United States
 4971,0,Home Eng,2604:a880:4:1d0::32f:0,,,,,2025-01-07T02:46:20.000Z,Santa Clara,United States
+4978,0,Home,143.110.148.142,http://kopibatigo.id/,Other,,,2025-01-07T08:30:40.000Z,Santa Clara,United States
 4221,0,Home,47.251.13.32,https://kupibatigo.id/,Chrome 103.0.5060.114,,,2024-12-01T11:17:36.000Z,Santa Clara,United States
 4222,0,Home,47.254.74.59,https://kupibatigo.id.kopibatigo.id/,Chrome 103.0.5060.114,,,2024-12-01T11:17:43.000Z,Santa Clara,United States
 2435,0,Home,47.251.14.232,https://kupibatigo.id.kopibatigo.id/,Chrome 103.0.5060.114,,,2024-09-02T22:18:05.000Z,Santa Clara,United States
@@ -3733,6 +3763,7 @@ id,user_id,title,ip_address,referrer,agent,utm_source,utm_medium,hit_time,city,c
 3696,0,Tour,66.249.66.7,,,,,2024-11-02T06:31:04.000Z,Unknown,United States
 3697,0,Tour,66.249.71.6,,,,,2024-11-02T09:44:25.000Z,Unknown,United States
 4465,0,Home Eng,5.161.232.133,,,,,2024-12-16T14:16:46.000Z,Unknown,United States
+4983,0,Home Eng,2620:0:9c0:10:31a8:e0f8:cdaf:9eb2,,,,,2025-01-07T12:40:01.000Z,Unknown,United States
 3971,0,Login Eng,66.249.66.8,,,,,2024-11-16T04:06:58.000Z,Unknown,United States
 3972,0,Home Eng,72.14.201.232,https://www.google.com/,,,,2024-11-16T04:18:05.000Z,Unknown,United States
 2698,0,Home Eng,104.152.52.69,,,,,2024-09-09T07:31:13.000Z,Unknown,United States
