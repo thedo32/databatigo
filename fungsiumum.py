@@ -1,9 +1,23 @@
 import pandas as pd
+import requests
 import csv
 import streamlit as st
 from streamlit_extras.stylable_container import stylable_container
 
 @st.cache_resource
+
+# API URL
+
+
+def fetch_data_user(urluser):
+    response = requests.get(urluser)
+    data = response.json()
+    return pd.DataFrame(data)
+
+def fetch_data_hit(urlhit):
+    response = requests.get(urlhit)
+    data = response.json()
+    return pd.DataFrame(data)
 
 def users_csv(file_csv):
     import requests
