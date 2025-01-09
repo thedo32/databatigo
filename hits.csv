@@ -957,14 +957,19 @@ id,user_id,title,ip_address,referrer,agent,utm_source,utm_medium,hit_time,city,c
 1186,0,Kupi Batigo Tour - Camping Space Only,223.255.231.149,https://www.en.kopibatigo.id/taluak,Other,,,2024-08-06T04:16:42.000Z,Jakarta,Indonesia
 1187,0,Meeting dan Creative Space - Paket Ruang Meeting ,223.255.231.149,https://www.kopibatigo.id/painan,Other,,,2024-08-06T04:21:14.000Z,Jakarta,Indonesia
 1700,0,Login,223.255.231.132,,Chrome 127.0.6533.103,android,social,2024-08-13T01:23:36.000Z,Jakarta,Indonesia
+5028,0,Wisata Kupi Batigo - Paket Berkemah,223.255.231.149,https://kopibatigo.id/,Chrome 131.0.0.0,,,2025-01-09T07:20:54.000Z,Jakarta,Indonesia
 1701,0,Home,223.255.231.132,https://www.kopibatigo.id/login?session_id=null&utm_source=android&utm_medium=social,Chrome 127.0.6533.103,,,2024-08-13T01:23:40.000Z,Jakarta,Indonesia
+5029,0,Kafe,223.255.231.149,https://www.kopibatigo.id/home,Chrome 131.0.0.0,,,2025-01-09T07:21:46.000Z,Jakarta,Indonesia
 1190,0,Meeting dan Creative Space - Paket External Event 1,223.255.231.149,https://www.kopibatigo.id/painan,Other,,,2024-08-06T04:21:30.000Z,Jakarta,Indonesia
 1702,1,Home,223.255.231.132,https://www.kopibatigo.id/login,Chrome 127.0.6533.103,,,2024-08-13T01:26:52.000Z,Jakarta,Indonesia
+5030,0,Kupi Batigo Kafe - Paket Makanan ,223.255.231.149,https://www.kopibatigo.id/padang,Chrome 131.0.0.0,,,2025-01-09T07:21:56.000Z,Jakarta,Indonesia
 1191,0,Meeting dan Creative Space - Paket External Event 2,223.255.231.149,https://www.kopibatigo.id/painan,Other,,,2024-08-06T04:21:34.000Z,Jakarta,Indonesia
 1447,0,Home,114.79.4.57,,Other,whatsapp,social,2024-08-08T08:34:04.000Z,Jakarta,Indonesia
 1703,1,Kafe,223.255.231.132,https://www.kopibatigo.id/home,Chrome 127.0.6533.103,,,2024-08-13T01:27:01.000Z,Jakarta,Indonesia
+5031,0,Wisata,223.255.231.149,https://www.kopibatigo.id/padang/view/kupi-batigo-kafe-paket-makanan,Chrome 131.0.0.0,,,2025-01-09T07:22:02.000Z,Jakarta,Indonesia
 1192,0,Meeting and Creative Space - Paket External Event 3,223.255.231.149,https://www.kopibatigo.id/painan,Other,,,2024-08-06T04:21:36.000Z,Jakarta,Indonesia
 1704,1,Wisata,223.255.231.132,https://www.kopibatigo.id/padang,Chrome 127.0.6533.103,,,2024-08-13T01:27:05.000Z,Jakarta,Indonesia
+5032,0,Wisata Kupi Batigo - Paket Snorkling Kupi Batigo,223.255.231.149,https://www.kopibatigo.id/taluak,Chrome 131.0.0.0,,,2025-01-09T07:22:06.000Z,Jakarta,Indonesia
 1193,0,Wisata Kopi Batigo - Paket Mancing Area Jauh,223.255.231.149,https://www.kopibatigo.id/taluak/index/6,Other,,,2024-08-06T04:22:40.000Z,Jakarta,Indonesia
 2473,0,Home,223.255.231.140,,Chrome 128.0.0.0,whatsapp,social,2024-09-04T06:42:55.000Z,Jakarta,Indonesia
 2475,0,Home,223.255.231.140,,Chrome 127.0.0.0,,,2024-09-04T06:58:22.000Z,Jakarta,Indonesia
@@ -1945,6 +1950,7 @@ id,user_id,title,ip_address,referrer,agent,utm_source,utm_medium,hit_time,city,c
 4442,0,Home,185.247.137.169,,Mozilla 5.0,,,2024-12-15T19:18:14.000Z,Bursa,Türkiye
 5015,0,Home,185.247.137.168,,Mozilla 5.0,,,2025-01-08T22:44:44.000Z,Bursa,Türkiye
 5024,0,Home,185.247.137.44,http://kopibatigo.id,Mozilla 5.0,,,2025-01-09T02:29:58.000Z,Bursa,Türkiye
+5026,0,Home,185.247.137.68,https://www.kupibatigo.id.kopibatigo.id/,Mozilla 5.0,,,2025-01-09T04:49:49.000Z,Bursa,Türkiye
 4813,0,Home,185.247.137.232,https://kupibatigo.id/,Mozilla 5.0,,,2025-01-02T09:28:21.000Z,Bursa,Türkiye
 4327,0,Home,185.247.137.166,http://mail.kopibatigo.id,Mozilla 5.0,,,2024-12-10T16:41:30.000Z,Bursa,Türkiye
 2304,0,Home,37.187.215.242,,Firefox 115.0,,,2024-08-31T08:07:56.000Z,Other,Türkiye
@@ -3343,10 +3349,12 @@ id,user_id,title,ip_address,referrer,agent,utm_source,utm_medium,hit_time,city,c
 2721,0,Login,207.46.13.7,,Bing,,,2024-09-10T14:50:52.000Z,Other,United States
 2977,0,Wisata Kopi Batigo - Paket Mancing Area Jauh,66.249.68.66,,Googlebot,,,2024-09-21T05:27:56.000Z,Other,United States
 4257,0,Home,2602:80d:1002::10,,Mozilla 5.0,,,2024-12-04T13:38:31.000Z,Other,United States
+5025,0,Home,199.244.88.218,http://kopibatigo.id,Chrome 105.0.0.0,,,2025-01-09T03:53:35.000Z,Other,United States
 3746,0,Home,2602:80d:1003::2c,,Mozilla 5.0,,,2024-11-03T04:46:36.000Z,Other,United States
 4514,0,Home,199.244.88.227,https://kupibatigo.id/,Chrome 105.0.0.0,,,2024-12-19T19:05:38.000Z,Other,United States
 3747,0,Home,2602:80d:1002::13,,Other,,,2024-11-03T05:03:57.000Z,Other,United States
 4515,0,Home,2602:80d:1000::52,,Mozilla 5.0,,,2024-12-19T19:49:56.000Z,Other,United States
+5027,0,Wisata Kupi Batigo - Paket Snorkling Kupi Batigo,66.249.71.202,,Googlebot,,,2025-01-09T05:05:37.000Z,Other,United States
 3748,0,Home,2602:80d:1002::13,,Mozilla 5.0,,,2024-11-03T05:04:02.000Z,Other,United States
 4004,0,Home,198.235.24.163,,Other,,,2024-11-17T17:13:08.000Z,Other,United States
 4516,0,Home,2602:80d:1006::28,,Mozilla 5.0,,,2024-12-19T19:50:23.000Z,Other,United States
