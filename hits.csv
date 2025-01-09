@@ -1538,6 +1538,7 @@ id,user_id,title,ip_address,referrer,agent,utm_source,utm_medium,hit_time,city,c
 1471,0,Wisata Kupi Batigo - Eko Wisata Mangrove Per Perahu,182.4.69.202,https://kopibatigo.id/,Other,,,2024-08-08T11:08:22.000Z,Padang,Indonesia
 1983,0,Home,2001:448a:1105:142e:ac80:7d9:ef71:cfd6,https://www.kopibatigo.id/home,Chrome 127.0.0.0,,,2024-08-18T16:04:54.000Z,Padang,Indonesia
 5055,1,Home,2001:448a:110d:1a3b:f45b:755d:2857:bc3a,https://www.kopibatigo.id/login,Chrome 131.0.0.0,,,2025-01-09T09:43:11.000Z,Padang,Indonesia
+5057,47,Home,2001:448a:110d:1a3b:f45b:755d:2857:bc3a,https://www.kopibatigo.id/login/logout,Chrome 131.0.0.0,,,2025-01-09T10:43:05.000Z,Padang,Indonesia
 1986,0,Home,36.69.11.88,,Safari 604.1,,,2024-08-18T18:00:41.000Z,Padang,Indonesia
 1476,0,Home,182.4.71.254,,Other,whatsapp,social,2024-08-08T12:19:51.000Z,Padang,Indonesia
 2756,0,Home,182.4.69.253,https://www.bing.com/,Chrome 128.0.0.0,,,2024-09-13T04:00:06.000Z,Padang,Indonesia

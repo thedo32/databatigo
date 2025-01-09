@@ -50,11 +50,12 @@ st.markdown(
 dfh['hit_time'] = pd.to_datetime(dfh['hit_time'], errors='coerce')
 #dfh['hit_day'] = dfh['hit_time'].dt.date  # Extract the date part for grouping
 
+st.markdown("## Data Jumlah Pengunjung")
 # Main columns for metrics
 col1, col2, col3 = st.columns(3, border=True)
 
 # Total unique visitors
-st.markdown("## Data Jumlah Pengunjung")
+
 with col1:
     dfh_non_zero = dfh[dfh["user_id"] > 0]
     unique_logged_in_visitors = dfh_non_zero.groupby(['user_id', 'ip_address']).ngroups
