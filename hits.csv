@@ -508,6 +508,8 @@ id,user_id,title,ip_address,referrer,agent,utm_source,utm_medium,hit_time,city,c
 4530,0,Home,42.236.17.95,https://kopibatigo.id/,Chrome 50.0.2661.102,,,2024-12-20T15:17:56.000Z,Zhengzhou,China
 4791,0,Home Eng,42.236.17.55,https://en.kopibatigo.id/home,,,,2025-01-01T17:58:51.000Z,Zhengzhou,China
 4280,0,Home,42.236.101.252,https://www.kopibatigo.id/,Chrome 50.0.2661.102,,,2024-12-06T13:00:57.000Z,Zhengzhou,China
+5051,0,Home,42.236.101.241,,Chrome 50.0.2661.102,,,2025-01-09T07:49:46.000Z,Zhengzhou,China
+5052,0,Home Eng,42.236.12.234,,,,,2025-01-09T08:43:52.000Z,Zhengzhou,China
 1987,0,Home,42.236.17.52,https://www.kopibatigo.id/home,Chrome 50.0.2661.102,,,2024-08-18T18:18:17.000Z,Zhengzhou,China
 2755,0,Home,120.219.84.20,https://kopibatigo.id/,Chrome 50.0.2661.102,,,2024-09-13T02:41:20.000Z,Zhengzhou,China
 1988,0,Home,42.236.12.218,https://www.kopibatigo.id/,Chrome 50.0.2661.102,,,2024-08-18T18:18:47.000Z,Zhengzhou,China
@@ -972,22 +974,35 @@ id,user_id,title,ip_address,referrer,agent,utm_source,utm_medium,hit_time,city,c
 5032,0,Wisata Kupi Batigo - Paket Snorkling Kupi Batigo,223.255.231.149,https://www.kopibatigo.id/taluak,Chrome 131.0.0.0,,,2025-01-09T07:22:06.000Z,Jakarta,Indonesia
 1193,0,Wisata Kopi Batigo - Paket Mancing Area Jauh,223.255.231.149,https://www.kopibatigo.id/taluak/index/6,Other,,,2024-08-06T04:22:40.000Z,Jakarta,Indonesia
 2473,0,Home,223.255.231.140,,Chrome 128.0.0.0,whatsapp,social,2024-09-04T06:42:55.000Z,Jakarta,Indonesia
+5033,0,Login,223.255.231.149,https://www.kopibatigo.id/taluak/view/wisata-kupi-batigo-paket-snorkling-kupi-batigo,Chrome 131.0.0.0,,,2025-01-09T07:27:01.000Z,Jakarta,Indonesia
+5034,47,Home,223.255.231.149,https://www.kopibatigo.id/login,Chrome 131.0.0.0,,,2025-01-09T07:27:13.000Z,Jakarta,Indonesia
 2475,0,Home,223.255.231.140,,Chrome 127.0.0.0,,,2024-09-04T06:58:22.000Z,Jakarta,Indonesia
+5035,47,Kafe,223.255.231.149,https://www.kopibatigo.id/home,Chrome 131.0.0.0,,,2025-01-09T07:29:12.000Z,Jakarta,Indonesia
 1196,0,Home,223.255.231.140,,Other,,,2024-08-06T06:07:49.000Z,Jakarta,Indonesia
 2476,0,Login,223.255.231.140,https://kopibatigo.id/,Chrome 127.0.0.0,,,2024-09-04T06:58:24.000Z,Jakarta,Indonesia
+5036,47,Wisata,223.255.231.149,https://www.kopibatigo.id/padang,Chrome 131.0.0.0,,,2025-01-09T07:29:14.000Z,Jakarta,Indonesia
 1197,0,Tour,223.255.231.140,https://kopibatigo.id/,Other,,,2024-08-06T06:08:03.000Z,Jakarta,Indonesia
 2477,92,Home,223.255.231.140,https://www.kopibatigo.id/login,Chrome 127.0.0.0,,,2024-09-04T06:58:33.000Z,Jakarta,Indonesia
+5037,47,Wisata Kupi Batigo - Paket Snorkling Kupi Batigo,223.255.231.149,https://www.kopibatigo.id/taluak,Chrome 131.0.0.0,,,2025-01-09T07:29:17.000Z,Jakarta,Indonesia
 1198,0,Wisata Kupi Batigo - Paket Memancing Area Dekat,223.255.231.140,https://www.kopibatigo.id/taluak/index,Other,,,2024-08-06T06:12:13.000Z,Jakarta,Indonesia
 2478,47,Home,223.255.231.140,https://www.kopibatigo.id/login/logout,Chrome 127.0.0.0,,,2024-09-04T06:58:53.000Z,Jakarta,Indonesia
 1199,0,Wisata Kupi Batigo - Eko Wisata Mangrove Per Orang,223.255.231.140,https://www.kopibatigo.id/taluak,Other,,,2024-08-06T06:12:29.000Z,Jakarta,Indonesia
 2479,1,Home,223.255.231.140,https://www.kopibatigo.id/login/logout,Chrome 127.0.0.0,,,2024-09-04T06:59:02.000Z,Jakarta,Indonesia
+5039,47,Creative Space,223.255.231.149,https://www.kopibatigo.id/taluak/view/wisata-kupi-batigo-paket-snorkling-kupi-batigo,Chrome 131.0.0.0,,,2025-01-09T07:32:11.000Z,Jakarta,Indonesia
+5040,47,Meeting dan Creative Space - Paket Ruang Meeting ,223.255.231.149,https://www.kopibatigo.id/painan,Chrome 131.0.0.0,,,2025-01-09T07:32:16.000Z,Jakarta,Indonesia
 2481,86,Home,223.255.231.140,https://www.kopibatigo.id/login/actionlogin,Chrome 127.0.0.0,,,2024-09-04T06:59:48.000Z,Jakarta,Indonesia
+5041,47,Home Eng,223.255.231.149,https://www.kopibatigo.id/,,,,2025-01-09T07:34:58.000Z,Jakarta,Indonesia
 2482,46,Home,223.255.231.140,https://www.kopibatigo.id/login,Chrome 127.0.0.0,,,2024-09-04T07:06:54.000Z,Jakarta,Indonesia
+5042,47,Tour,223.255.231.149,https://en.kopibatigo.id/,,,,2025-01-09T07:35:08.000Z,Jakarta,Indonesia
 2483,0,Kafe,223.255.231.140,https://www.kopibatigo.id/login/logout,Chrome 127.0.0.0,,,2024-09-04T07:07:57.000Z,Jakarta,Indonesia
 2484,0,Kupi Batigo Kafe - Paket Makanan ,223.255.231.140,https://www.kopibatigo.id/padang,Chrome 127.0.0.0,,,2024-09-04T07:07:59.000Z,Jakarta,Indonesia
+5044,0,Login,223.255.231.149,,Chrome 131.0.6778.200,android,social,2025-01-09T07:38:54.000Z,Jakarta,Indonesia
 2485,0,Kupi Batigo Kafe - Paket Minuman,223.255.231.140,https://www.kopibatigo.id/padang,Chrome 127.0.0.0,,,2024-09-04T07:08:08.000Z,Jakarta,Indonesia
+5045,0,Home,223.255.231.149,https://www.kopibatigo.id/login?session_id=null&utm_source=android&utm_medium=social,Chrome 131.0.6778.200,,,2025-01-09T07:39:01.000Z,Jakarta,Indonesia
 2486,0,Wisata,223.255.231.140,https://www.kopibatigo.id/padang,Chrome 127.0.0.0,,,2024-09-04T07:08:25.000Z,Jakarta,Indonesia
+5046,47,Kupi Batigo Tour - Kolam Hiu Package,223.255.231.149,https://www.en.kopibatigo.id/taluak,,,,2025-01-09T07:41:13.000Z,Jakarta,Indonesia
 2487,0,Wisata Kupi Batigo - Eko Wisata Mangrove Per Orang,223.255.231.140,https://www.kopibatigo.id/taluak/index/6,Chrome 127.0.0.0,,,2024-09-04T07:08:42.000Z,Jakarta,Indonesia
+5047,47,Cafe,223.255.231.149,https://www.en.kopibatigo.id/taluak/view/kupi-batigo-tour-kolam-hiu-package,,,,2025-01-09T07:41:18.000Z,Jakarta,Indonesia
 2488,0,Creative Space,223.255.231.140,https://www.kopibatigo.id/taluak/view/wisata-kupi-batigo-eko-wisata-mangrove-per-orang,Chrome 127.0.0.0,,,2024-09-04T07:08:45.000Z,Jakarta,Indonesia
 2489,0,Meeting dan Creative Space - Paket External Event 2,223.255.231.140,https://www.kopibatigo.id/painan,Chrome 127.0.0.0,,,2024-09-04T07:08:47.000Z,Jakarta,Indonesia
 2490,0,Kupi Batigo Kafe - Camilan/Snack,223.255.231.140,https://www.kopibatigo.id/padang,Chrome 127.0.0.0,,,2024-09-04T07:08:53.000Z,Jakarta,Indonesia
@@ -1487,6 +1502,7 @@ id,user_id,title,ip_address,referrer,agent,utm_source,utm_medium,hit_time,city,c
 1713,47,Home,36.69.15.225,,Chrome 127.0.6533.103,,,2024-08-13T04:38:14.000Z,Padang,Indonesia
 1714,0,Login,36.69.15.225,,Chrome 127.0.6533.103,android,social,2024-08-13T04:57:33.000Z,Padang,Indonesia
 1971,0,Login,2001:448a:1105:142e:ac80:7d9:ef71:cfd6,,Chrome 127.0.6533.103,android,social,2024-08-18T05:12:16.000Z,Padang,Indonesia
+5043,0,Home,36.69.10.113,,Chrome 129.0.0.0,,,2025-01-09T07:38:53.000Z,Padang,Indonesia
 1972,0,Home,2001:448a:1105:142e:ac80:7d9:ef71:cfd6,https://www.kopibatigo.id/login?session_id=null&utm_source=android&utm_medium=social,Chrome 127.0.6533.103,,,2024-08-18T05:12:25.000Z,Padang,Indonesia
 1717,0,Home,36.69.15.188,,Chrome 126.0.0.0,,,2024-08-13T09:40:35.000Z,Padang,Indonesia
 1206,0,Home,223.255.227.30,,Other,,,2024-08-06T09:22:18.000Z,Padang,Indonesia
@@ -1499,11 +1515,13 @@ id,user_id,title,ip_address,referrer,agent,utm_source,utm_medium,hit_time,city,c
 1208,0,Wisata Kupi Batigo - Paket Snorkling Kupi Batigo,36.69.11.103,https://www.kopibatigo.id/taluak,Other,,,2024-08-06T09:42:26.000Z,Padang,Indonesia
 1464,0,Wisata Kupi Batigo - Eko Wisata Mangrove Per Perahu,103.108.22.7,https://kopibatigo.id/,Other,,,2024-08-08T09:44:18.000Z,Padang,Indonesia
 1720,0,Wisata Kupi Batigo - Paket Berkemah,36.69.15.188,https://www.kopibatigo.id/taluak,Chrome 126.0.0.0,,,2024-08-13T09:45:11.000Z,Padang,Indonesia
+5048,0,Kafe,36.69.10.113,https://kopibatigo.id/,Chrome 129.0.0.0,,,2025-01-09T07:41:38.000Z,Padang,Indonesia
 1209,0,Kupi Batigo Tour - Package to Pagang/Pamutusan Island,36.69.11.103,https://www.en.kopibatigo.id/taluak/index/6,Other,,,2024-08-06T09:42:45.000Z,Padang,Indonesia
 1465,0,Tour,103.108.22.7,https://kopibatigo.id/,Other,,,2024-08-08T09:44:39.000Z,Padang,Indonesia
 1721,0,Wisata Kupi Batigo - Paket Snorkling Kolam Hiu,36.69.15.188,https://www.kopibatigo.id/taluak,Chrome 126.0.0.0,,,2024-08-13T09:45:23.000Z,Padang,Indonesia
 1466,0,Wisata Kupi Batigo - Paket Berkemah,103.108.22.7,https://www.kopibatigo.id/taluak,Other,,,2024-08-08T09:44:42.000Z,Padang,Indonesia
 1722,0,Kafe,36.69.15.188,https://www.kopibatigo.id/home,Chrome 126.0.0.0,,,2024-08-13T09:46:38.000Z,Padang,Indonesia
+5050,0,Creative Space,36.69.10.113,https://www.kopibatigo.id/padang,Chrome 129.0.0.0,,,2025-01-09T07:41:58.000Z,Padang,Indonesia
 1211,0,Kupi Batigo Tour - Package to Pasumpahan Island,36.69.11.103,https://www.en.kopibatigo.id/taluak/index/6,Other,,,2024-08-06T09:42:49.000Z,Padang,Indonesia
 1467,0,Home,182.4.70.240,,Other,whatsapp,social,2024-08-08T10:09:19.000Z,Padang,Indonesia
 1723,0,Home,36.69.15.188,,Chrome 123.0.0.0,,,2024-08-13T09:47:26.000Z,Padang,Indonesia
@@ -3379,6 +3397,7 @@ id,user_id,title,ip_address,referrer,agent,utm_source,utm_medium,hit_time,city,c
 4523,0,Home,2602:80d:1000::13,,Mozilla 5.0,,,2024-12-20T08:20:12.000Z,Other,United States
 1965,0,Home,64.23.226.160,,Chrome 126.0.0.0,,,2024-08-17T20:24:51.000Z,Other,United States
 4270,0,Wisata Kupi Batigo - Paket Memancing Area Dekat,66.249.70.67,,Googlebot,,,2024-12-05T22:37:05.000Z,Other,United States
+5038,0,Wisata Kupi Batigo - Paket Snorkling Kupi Batigo,66.249.73.14,,Googlebot,,,2025-01-09T07:31:36.000Z,Other,United States
 1967,0,Creative Space,157.55.39.7,,Bing,,,2024-08-17T22:02:03.000Z,Other,United States
 4272,0,Home,2602:80d:1002::17,,Other,,,2024-12-06T01:46:33.000Z,Other,United States
 2737,0,Home,205.169.39.7,https://kupibatigo.id/,Chrome 106.0.0.0,,,2024-09-11T16:50:10.000Z,Other,United States
@@ -3403,6 +3422,7 @@ id,user_id,title,ip_address,referrer,agent,utm_source,utm_medium,hit_time,city,c
 4025,0,Home,66.249.71.2,,Googlebot,,,2024-11-18T03:46:24.000Z,Other,United States
 4537,0,Home,2620:96:e000::d0,,Mozilla 5.0,,,2024-12-20T22:32:17.000Z,Other,United States
 4793,0,Home,2620:96:e000::b7,,Other,,,2025-01-01T18:52:36.000Z,Other,United States
+5049,0,Kafe,64.233.172.9,,Chrome 59.0.3071.125,,,2025-01-09T07:41:45.000Z,Other,United States
 2746,0,Home,2001:470:1:c84::31,,Firefox 126.0,,,2024-09-12T06:34:16.000Z,Other,United States
 4026,0,Home,66.249.71.9,,Googlebot,,,2024-11-18T03:46:38.000Z,Other,United States
 4538,0,Home,2602:80d:1006::74,,Mozilla 5.0,,,2024-12-20T22:43:09.000Z,Other,United States
