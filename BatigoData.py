@@ -187,53 +187,58 @@ tab1, tab2, tab3 = st.tabs(["Jumlah Kunjungan per Wilayah","Jumlah Kunjungan per
 
 with (tab1):
     # DAILY TIME ANALYSYS
+
     st.markdown("## Analisa Kunjungan Per Hari")
 
-
-    # Remove 'Other' and 'Unknown' from country and city
+    # Filter out "Other" and "Unknown"
     dfh = dfh[~dfh['country'].isin(["Other", "Unknown"])]
     dfh = dfh[~dfh['city'].isin(["Other", "Unknown"])]
 
-    # Filters
     st.markdown("### Filter Menurut Negara dan Kota")
 
-    # Country filter
-    selected_country = st.selectbox("Pilih Negara", options=['All'] + dfh['country'].unique().tolist(), index=0)
+    # Multiselect for country
+    selected_countries = st.multiselect(
+        "Pilih Negara",
+        options=["All"] + dfh['country'].unique().tolist(),
+        default=["All"],
+    )
 
-    # Filter cities based on the selected country
-    if selected_country == 'All':
-        filtered_cities = dfh['city'].unique()
-    else:
-        filtered_cities = dfh[dfh['country'] == selected_country]['city'].unique()
+    # Filter based on selected countries
+    if "All" not in selected_countries:
+        dfh = dfh[dfh['country'].isin(selected_countries)]
 
-    # City filter
-    selected_city = st.selectbox("Pilih Kota", options=['All'] + sorted(filtered_cities), index=0)
+    # Multiselect for city
+    filtered_cities = dfh['city'].unique()
+    selected_cities = st.multiselect(
+        "Pilih Kota",
+        options=["All"] + sorted(filtered_cities),
+        default=["All"],
+    )
 
-    # Apply both filters
-    if selected_country != 'All':
-        dfh = dfh[dfh['country'] == selected_country]
-
-    if selected_city != 'All':
-        dfh = dfh[dfh['city'] == selected_city]
+    # Filter based on selected cities
+    if "All" not in selected_cities:
+        dfh = dfh[dfh['city'].isin(selected_cities)]
 
     # Aggregate filtered data
     daily_visits_filtered = dfh.groupby('tanggal').size().reset_index(name='visit_count')
 
     # Plot the filtered data
-    time_series_chart_filtered = alt.Chart(daily_visits_filtered).mark_line().encode(
-        x=alt.X('tanggal:T', title='Tanggal'),
-        y=alt.Y('visit_count:Q', title='Jumlah Kunjungan'),
-        tooltip=[
-            alt.Tooltip('tanggal:T', title='Tanggal', format='%Y-%m-%d'),
-            alt.Tooltip('visit_count:Q', title='Kunjungan')
-        ]
-    ).properties(
-        title="Kunjungan Per Hari Berdasarkan Wilayah",
-        height=400,
-        width=1200
-    ).interactive()
-
-    st.altair_chart(time_series_chart_filtered)
+    if not daily_visits_filtered.empty:
+        time_series_chart_filtered = alt.Chart(daily_visits_filtered).mark_line().encode(
+            x=alt.X('tanggal:T', title='Tanggal'),
+            y=alt.Y('visit_count:Q', title='Jumlah Kunjungan'),
+            tooltip=[
+                alt.Tooltip('tanggal:T', title='Tanggal', format='%Y-%m-%d'),
+                alt.Tooltip('visit_count:Q', title='Kunjungan')
+            ]
+        ).properties(
+            title="Kunjungan Per Hari Berdasarkan Wilayah",
+            height=400,
+            width=1200
+        ).interactive()
+        st.altair_chart(time_series_chart_filtered)
+    else:
+        st.warning("Tidak ada  data tersedia untuk filters yang dipilih.")
 
     st.divider()
 
@@ -368,51 +373,48 @@ with tab2:
     # DAILY TIME ANALYSYS
     st.markdown("## Analisa Kunjungan Per Hari")
 
+    # Multiselect for country
+    selected_countries = st.multiselect(
+        "Pilih Negara",
+        options=["All"] + dfh['country'].unique().tolist(),
+        default=["All"],
+        key="halaman_country"
+    )
 
-    # Remove 'Other' and 'Unknown' from country and city
-    dfh = dfh[~dfh['country'].isin(["Other", "Unknown"])]
-    dfh = dfh[~dfh['city'].isin(["Other", "Unknown"])]
+    if "All" not in selected_countries:
+        dfh = dfh[dfh['country'].isin(selected_countries)]
 
-    # Filters
-    st.markdown("### Filter Menurut Negara dan Halaman")
+    # Multiselect for pages
+    filtered_pages = dfh['title'].unique()
+    selected_pages = st.multiselect(
+        "Pilih Halaman",
+        options=["All"] + sorted(filtered_pages),
+        default=["All"],
+    )
 
-    # Country filter
-    selected_country = st.selectbox("Pilih Negara", options=['All'] + dfh['country'].unique().tolist(), index=0, key=123)
-
-    # Filter cities based on the selected country
-    if selected_country == 'All':
-        filtered_pages = dfh['title'].unique()
-    else:
-        filtered_pages = dfh[dfh['country'] == selected_country]['title'].unique()
-
-    # City filter
-    selected_page = st.selectbox("Pilih Halaman", options=['All'] + sorted(filtered_pages), index=0)
-
-    # Apply both filters
-    if selected_country != 'All':
-        dfh = dfh[dfh['country'] == selected_country]
-
-    if selected_page != 'All':
-        dfh = dfh[dfh['title'] == selected_page]
+    if "All" not in selected_pages:
+        dfh = dfh[dfh['title'].isin(selected_pages)]
 
     # Aggregate filtered data
     daily_visits_filtered = dfh.groupby('tanggal').size().reset_index(name='visit_count')
 
-    # Plot the filtered data
-    time_series_chart_filtered = alt.Chart(daily_visits_filtered).mark_line().encode(
-        x=alt.X('tanggal:T', title='Tanggal'),
-        y=alt.Y('visit_count:Q', title='Jumlah Kunjungan'),
-        tooltip=[
-            alt.Tooltip('tanggal:T', title='Tanggal', format='%Y-%m-%d'),
-            alt.Tooltip('visit_count:Q', title='Kunjungan')
-        ]
-    ).properties(
-        title="Kunjungan Per Hari Berdasarkan Halaman",
-        height=400,
-        width=1200
-    ).interactive()
-
-    st.altair_chart(time_series_chart_filtered)
+    # Plot filtered data
+    if not daily_visits_filtered.empty:
+        time_series_chart_filtered = alt.Chart(daily_visits_filtered).mark_line().encode(
+            x=alt.X('tanggal:T', title='Tanggal'),
+            y=alt.Y('visit_count:Q', title='Jumlah Kunjungan'),
+            tooltip=[
+                alt.Tooltip('tanggal:T', title='Tanggal', format='%Y-%m-%d'),
+                alt.Tooltip('visit_count:Q', title='Kunjungan')
+            ]
+        ).properties(
+            title="Kunjungan Per Hari Berdasarkan Halaman",
+            height=400,
+            width=1200
+        ).interactive()
+        st.altair_chart(time_series_chart_filtered)
+    else:
+        st.warning("Tidak ada  data tersedia untuk filters yang dipilih.")
 
     st.divider()
 
