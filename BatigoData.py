@@ -19,11 +19,46 @@ Email: databaseoutlet@gmail.com
             """}
 )
 
-fu.users_csv("users.csv")
-fu.hits_csv("hits.csv")
+urluser = "https://restful.kopibatigo.id/users"
+urlhit = "https://restful.kopibatigo.id/hits"
 
-dfu = fu.load_users('users.csv')
-dfh = fu.load_users('hits.csv')
+
+st.markdown("<h1 style='text-align: center;'>Analisa Data Kopi Batigo</h1>",unsafe_allow_html=True)
+
+with st.expander("Ekspor Data Ke CSV"):
+    # Dropdown to select the data to export
+    export_option = st.selectbox(
+        "Pilih Data untuk Diekspor ke CSV:",
+        options=["Ekspor User Data", "Ekspor Hit Data"],
+    )
+
+    # Handle export based on selection
+    if export_option == "Ekspor User Data":
+        fu.users_csv("users.csv")
+        st.success("User data telah diekspor ke 'users.csv'.")
+
+    elif export_option == "Ekspor Hit Data":
+        fu.hits_csv("hits.csv")
+        st.success("Hit data telah diekspor ke 'hits.csv'.")
+
+
+#dfu = fu.load_users('users.csv')
+#dfh = fu.load_hits('hits.csv')
+
+dfu = fu.fetch_data_user(urluser)
+dfh = fu.fetch_data_hit(urlhit)
+
+
+if dfu is None:
+    dfu = fu.load_users('users.csv')
+    if dfu is None:
+        st.warning("Data tidak tersedia")
+
+if dfh is None:
+    dfh = fu.load_hits('hits.csv')
+    if dfh is None:
+        st.warning("Data tidak tersedia")
+
 dfh["hit_time"] = pd.to_datetime(dfh["hit_time"], errors="coerce")
 
 # Inject CSS for column styling
@@ -188,13 +223,12 @@ tab1, tab2, tab3 = st.tabs(["Jumlah Kunjungan per Wilayah","Jumlah Kunjungan per
 with (tab1):
     # DAILY TIME ANALYSYS
 
-    st.markdown("## Analisa Kunjungan Per Hari")
+    st.markdown("### Analisa Kunjungan Per Hari Berdasarkan Negara dan Kota")
 
     # Filter out "Other" and "Unknown"
     dfh = dfh[~dfh['country'].isin(["Other", "Unknown"])]
     dfh = dfh[~dfh['city'].isin(["Other", "Unknown"])]
 
-    st.markdown("### Filter Menurut Negara dan Kota")
 
     # Multiselect for country
     selected_countries = st.multiselect(
@@ -224,7 +258,7 @@ with (tab1):
 
     # Plot the filtered data
     if not daily_visits_filtered.empty:
-        time_series_chart_filtered = alt.Chart(daily_visits_filtered).mark_line().encode(
+        time_series_chart_filtered = alt.Chart(daily_visits_filtered).mark_line(point=True).encode(
             x=alt.X('tanggal:T', title='Tanggal'),
             y=alt.Y('visit_count:Q', title='Jumlah Kunjungan'),
             tooltip=[
@@ -371,7 +405,7 @@ with (tab1):
 with tab2:
 
     # DAILY TIME ANALYSYS
-    st.markdown("## Analisa Kunjungan Per Hari")
+    st.markdown("### Analisa Kunjungan Per Hari Berdasarkan Negara dan Halaman")
 
     # Multiselect for country
     selected_countries = st.multiselect(
@@ -400,7 +434,7 @@ with tab2:
 
     # Plot filtered data
     if not daily_visits_filtered.empty:
-        time_series_chart_filtered = alt.Chart(daily_visits_filtered).mark_line().encode(
+        time_series_chart_filtered = alt.Chart(daily_visits_filtered).mark_line(point=True).encode(
             x=alt.X('tanggal:T', title='Tanggal'),
             y=alt.Y('visit_count:Q', title='Jumlah Kunjungan'),
             tooltip=[
