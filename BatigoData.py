@@ -5,6 +5,8 @@ import pandas as pd
 import plotly.express as px
 import fungsiumum as fu
 from datetime import datetime
+from geopy.geocoders import Nominatim
+import requests
 
 from itables.streamlit import interactive_table
 
@@ -400,6 +402,82 @@ with (tab1):
         ).interactive(bind_x=True, bind_y=True)
 
         st.altair_chart(bars)
+
+# Geographic Heatmap by Country
+st.markdown("## Trends Secara Geografis: Analisa Menurut Negara")
+
+# Aggregate visit data by country and city
+country_visits = dfh.groupby('country').size().reset_index(name='visit_count')
+city_visits = dfh.groupby(['country', 'city']).size().reset_index(name='visit_count')
+
+fig_country = px.choropleth(
+    country_visits,
+    width= 1200,
+    height =800,
+    locations='country',
+    locationmode='country names',
+    color='visit_count',
+    hover_name='country',
+    color_continuous_scale='Viridis',
+    title="Visit Distribution by Country",
+)
+
+fig_country.update_geos(showcoastlines=True, coastlinecolor="LightGray")
+st.plotly_chart(fig_country)
+
+# Geographic Heatmap by City
+# st.markdown("## Trends Secara Geografis: Analisa Menurut Kota")
+#
+#
+# def get_lat_lon(city):
+#     url = f"https://nominatim.openstreetmap.org/search?q={city}&format=json"
+#     response = requests.get(url, headers={"User-Agent": "geo-app"})
+#     data = response.json()
+#     if data:
+#         return float(data[0]['lat']), float(data[0]['lon'])
+#     return None, None
+#
+# cities = dfh['city']
+# results = {'city': [], 'latitude': [], 'longitude': []}
+#
+# for city in cities:
+#     lat, lon = get_lat_lon(city)
+#     results['city'].append(city)
+#     results['latitude'].append(lat)
+#     results['longitude'].append(lon)
+#
+# df = pd.DataFrame(results)
+# df.to_csv('city_geolocation.csv', index=False)
+#
+# # Load pre-fetched geolocation data
+# geolocation_data = pd.read_csv("city_geolocation.csv")
+# dfh = dfh.merge(geolocation_data, on='city', how='left')
+#
+# # Fill missing coordinates with placeholders if needed
+# dfh['latitude'] = dfh['latitude'].fillna(0)  # Replace with a meaningful default
+# dfh['longitude'] = dfh['longitude'].fillna(0)
+#
+# # Merge with city-level visit data and visualize
+# city_visits = city_visits.merge(
+#     dfh[['city', 'latitude', 'longitude']].drop_duplicates(),
+#     on='city',
+#     how='left'
+# )
+#
+# fig_city = px.scatter_geo(
+#     city_visits,
+#     lat='latitude',
+#     lon='longitude',
+#     text='city',
+#     size='visit_count',
+#     color='visit_count',
+#     hover_name='city',
+#     title="Visit Distribution by City",
+#     color_continuous_scale='Viridis',
+# )
+# fig_city.update_geos(showcoastlines=True, coastlinecolor="LightGray")
+# st.plotly_chart(fig_city, use_container_width=True)
+
 
 #kunjungan per halaman
 with tab2:
