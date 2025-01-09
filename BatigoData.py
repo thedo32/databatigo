@@ -154,9 +154,6 @@ with col9:
 
 st.divider()
 
-#DAILY TIME ANALYSYS
-st.markdown("## Analisa Kunjungan Per Hari")
-
 # Aggregating data by date
 # Ensure 'hit_time' is in datetime format
 dfh['hit_time'] = pd.to_datetime(dfh['hit_time'], errors='coerce')
@@ -170,57 +167,63 @@ if dfh['hit_time'].isna().any():
 dfh['tanggal'] = dfh['hit_time'].dt.date  # Extract date from datetime
 daily_visits = dfh.groupby('tanggal').size().reset_index(name='visit_count')
 
-# Remove 'Other' and 'Unknown' from country and city
-dfh = dfh[~dfh['country'].isin(["Other", "Unknown"])]
-dfh = dfh[~dfh['city'].isin(["Other", "Unknown"])]
-
-# Filters
-st.markdown("### Filter Menurut Negara dan Kota")
-
-# Country filter
-selected_country = st.selectbox("Pilih Negara", options=['All'] + dfh['country'].unique().tolist(), index=0)
-
-# Filter cities based on the selected country
-if selected_country == 'All':
-    filtered_cities = dfh['city'].unique()
-else:
-    filtered_cities = dfh[dfh['country'] == selected_country]['city'].unique()
-
-# City filter
-selected_city = st.selectbox("Pilih Kota", options=['All'] + sorted(filtered_cities), index=0)
-
-# Apply both filters
-if selected_country != 'All':
-    dfh = dfh[dfh['country'] == selected_country]
-
-if selected_city != 'All':
-    dfh = dfh[dfh['city'] == selected_city]
-
-# Aggregate filtered data
-daily_visits_filtered = dfh.groupby('tanggal').size().reset_index(name='visit_count')
-
-# Plot the filtered data
-time_series_chart_filtered = alt.Chart(daily_visits_filtered).mark_line().encode(
-    x=alt.X('tanggal:T', title='Tanggal'),
-    y=alt.Y('visit_count:Q', title='Jumlah Kunjungan'),
-    tooltip=[
-        alt.Tooltip('tanggal:T', title='Tanggal', format='%Y-%m-%d'),
-        alt.Tooltip('visit_count:Q', title='Kunjungan')
-    ]
-).properties(
-    title="Kunjungan Per Hari Berdasarkan Wilayah",
-    height=400,
-    width=1200
-).interactive()
-
-st.altair_chart(time_series_chart_filtered)
-
-st.divider()
 
 tab1, tab2, tab3 = st.tabs(["Jumlah Kunjungan per Wilayah","Jumlah Kunjungan per Halaman",  "Pengguna Terdaftar"])
 
 with (tab1):
-    # Altair Chart
+    # DAILY TIME ANALYSYS
+    st.markdown("## Analisa Kunjungan Per Hari")
+
+
+    # Remove 'Other' and 'Unknown' from country and city
+    dfh = dfh[~dfh['country'].isin(["Other", "Unknown"])]
+    dfh = dfh[~dfh['city'].isin(["Other", "Unknown"])]
+
+    # Filters
+    st.markdown("### Filter Menurut Negara dan Kota")
+
+    # Country filter
+    selected_country = st.selectbox("Pilih Negara", options=['All'] + dfh['country'].unique().tolist(), index=0)
+
+    # Filter cities based on the selected country
+    if selected_country == 'All':
+        filtered_cities = dfh['city'].unique()
+    else:
+        filtered_cities = dfh[dfh['country'] == selected_country]['city'].unique()
+
+    # City filter
+    selected_city = st.selectbox("Pilih Kota", options=['All'] + sorted(filtered_cities), index=0)
+
+    # Apply both filters
+    if selected_country != 'All':
+        dfh = dfh[dfh['country'] == selected_country]
+
+    if selected_city != 'All':
+        dfh = dfh[dfh['city'] == selected_city]
+
+    # Aggregate filtered data
+    daily_visits_filtered = dfh.groupby('tanggal').size().reset_index(name='visit_count')
+
+    # Plot the filtered data
+    time_series_chart_filtered = alt.Chart(daily_visits_filtered).mark_line().encode(
+        x=alt.X('tanggal:T', title='Tanggal'),
+        y=alt.Y('visit_count:Q', title='Jumlah Kunjungan'),
+        tooltip=[
+            alt.Tooltip('tanggal:T', title='Tanggal', format='%Y-%m-%d'),
+            alt.Tooltip('visit_count:Q', title='Kunjungan')
+        ]
+    ).properties(
+        title="Kunjungan Per Hari Berdasarkan Wilayah",
+        height=400,
+        width=1200
+    ).interactive()
+
+    st.altair_chart(time_series_chart_filtered)
+
+    st.divider()
+
+    st.markdown("## Kunjungan Per Wilayah")
+    # Altair Bar Chart for All Countries
 
     # filter other or unknown
     df = dfh[~dfh['city'].isin(["Other", "Unknown"])]
@@ -346,7 +349,61 @@ with (tab1):
 
 #kunjungan per halaman
 with tab2:
-    # Altair Chart
+
+    # DAILY TIME ANALYSYS
+    st.markdown("## Analisa Kunjungan Per Hari")
+
+
+    # Remove 'Other' and 'Unknown' from country and city
+    dfh = dfh[~dfh['country'].isin(["Other", "Unknown"])]
+    dfh = dfh[~dfh['city'].isin(["Other", "Unknown"])]
+
+    # Filters
+    st.markdown("### Filter Menurut Negara dan Halaman")
+
+    # Country filter
+    selected_country = st.selectbox("Pilih Negara", options=['All'] + dfh['country'].unique().tolist(), index=0, key=123)
+
+    # Filter cities based on the selected country
+    if selected_country == 'All':
+        filtered_pages = dfh['title'].unique()
+    else:
+        filtered_pages = dfh[dfh['country'] == selected_country]['title'].unique()
+
+    # City filter
+    selected_page = st.selectbox("Pilih Halaman", options=['All'] + sorted(filtered_pages), index=0)
+
+    # Apply both filters
+    if selected_country != 'All':
+        dfh = dfh[dfh['country'] == selected_country]
+
+    if selected_page != 'All':
+        dfh = dfh[dfh['title'] == selected_page]
+
+    # Aggregate filtered data
+    daily_visits_filtered = dfh.groupby('tanggal').size().reset_index(name='visit_count')
+
+    # Plot the filtered data
+    time_series_chart_filtered = alt.Chart(daily_visits_filtered).mark_line().encode(
+        x=alt.X('tanggal:T', title='Tanggal'),
+        y=alt.Y('visit_count:Q', title='Jumlah Kunjungan'),
+        tooltip=[
+            alt.Tooltip('tanggal:T', title='Tanggal', format='%Y-%m-%d'),
+            alt.Tooltip('visit_count:Q', title='Kunjungan')
+        ]
+    ).properties(
+        title="Kunjungan Per Hari Berdasarkan Halaman",
+        height=400,
+        width=1200
+    ).interactive()
+
+    st.altair_chart(time_series_chart_filtered)
+
+    st.divider()
+
+
+    st.markdown("## Kunjungan Per Halaman")
+    # Altair Bar Chart
 
     # filter other or unknown
     df = dfh[~dfh['title'].isin(["Other", "Unknown", "Login", "Register"])]
