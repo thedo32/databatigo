@@ -1013,6 +1013,7 @@ id,user_id,title,ip_address,referrer,agent,utm_source,utm_medium,hit_time,city,c
 1215,0,Tour,223.255.231.134,https://www.en.kopibatigo.id/painan,Other,,,2024-08-06T09:43:13.000Z,Jakarta,Indonesia
 1216,0,Kupi Batigo Tour - Package to Pagang/Pamutusan Island,223.255.231.134,https://www.en.kopibatigo.id/taluak/index/6,Other,,,2024-08-06T09:43:17.000Z,Jakarta,Indonesia
 1472,0,Home,182.0.232.119,,Other,whatsapp,social,2024-08-08T11:23:50.000Z,Jakarta,Indonesia
+5056,0,Home,103.156.118.21,https://www.bing.com/,Chrome 131.0.0.0,,,2025-01-09T09:53:13.000Z,Jakarta,Indonesia
 1217,0,Kupi Batigo Tour - Package to Pasumpahan Island,223.255.231.134,https://www.en.kopibatigo.id/taluak/index/6,Other,,,2024-08-06T09:43:21.000Z,Jakarta,Indonesia
 1473,0,Home,180.242.56.59,,Other,whatsapp,social,2024-08-08T11:28:45.000Z,Jakarta,Indonesia
 1218,0,Kupi Batigo Tour - Package to Sirandah Island,223.255.231.134,https://www.en.kopibatigo.id/taluak/index/6,Other,,,2024-08-06T09:43:24.000Z,Jakarta,Indonesia
@@ -1529,11 +1530,14 @@ id,user_id,title,ip_address,referrer,agent,utm_source,utm_medium,hit_time,city,c
 1724,0,Wisata,36.69.15.188,https://www.kopibatigo.id/home,Chrome 123.0.0.0,,,2024-08-13T09:49:02.000Z,Padang,Indonesia
 1213,0,Kupi Batigo Tour - Outbound/Gathering Package,36.69.11.103,https://www.en.kopibatigo.id/taluak/index/6,Other,,,2024-08-06T09:42:59.000Z,Padang,Indonesia
 1469,0,Home,182.4.68.203,,Other,whatsapp,social,2024-08-08T10:57:58.000Z,Padang,Indonesia
+5053,0,Home,2001:448a:110d:1a3b:f45b:755d:2857:bc3a,,Chrome 131.0.0.0,,,2025-01-09T09:42:59.000Z,Padang,Indonesia
 1214,0,Creative Space Eng,36.69.11.103,https://www.en.kopibatigo.id/taluak/view/kupi-batigo-tour-outboundgathering-package,Other,,,2024-08-06T09:43:03.000Z,Padang,Indonesia
 1470,0,Home,182.4.69.202,,Other,whatsapp,social,2024-08-08T11:08:12.000Z,Padang,Indonesia
 1726,0,Home,140.213.125.3,,Safari 604.1,whatsapp,social,2024-08-13T13:31:59.000Z,Padang,Indonesia
+5054,0,Login,2001:448a:110d:1a3b:f45b:755d:2857:bc3a,https://kopibatigo.id/,Chrome 131.0.0.0,,,2025-01-09T09:43:02.000Z,Padang,Indonesia
 1471,0,Wisata Kupi Batigo - Eko Wisata Mangrove Per Perahu,182.4.69.202,https://kopibatigo.id/,Other,,,2024-08-08T11:08:22.000Z,Padang,Indonesia
 1983,0,Home,2001:448a:1105:142e:ac80:7d9:ef71:cfd6,https://www.kopibatigo.id/home,Chrome 127.0.0.0,,,2024-08-18T16:04:54.000Z,Padang,Indonesia
+5055,1,Home,2001:448a:110d:1a3b:f45b:755d:2857:bc3a,https://www.kopibatigo.id/login,Chrome 131.0.0.0,,,2025-01-09T09:43:11.000Z,Padang,Indonesia
 1986,0,Home,36.69.11.88,,Safari 604.1,,,2024-08-18T18:00:41.000Z,Padang,Indonesia
 1476,0,Home,182.4.71.254,,Other,whatsapp,social,2024-08-08T12:19:51.000Z,Padang,Indonesia
 2756,0,Home,182.4.69.253,https://www.bing.com/,Chrome 128.0.0.0,,,2024-09-13T04:00:06.000Z,Padang,Indonesia

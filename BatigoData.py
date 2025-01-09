@@ -48,27 +48,36 @@ st.markdown(
 # Overall metric
 # Assume dfh is already loaded and preprocessed
 dfh['hit_time'] = pd.to_datetime(dfh['hit_time'], errors='coerce')
-dfh['hit_day'] = dfh['hit_time'].dt.date  # Extract the date part for grouping
+#dfh['hit_day'] = dfh['hit_time'].dt.date  # Extract the date part for grouping
 
 # Main columns for metrics
 col1, col2, col3 = st.columns(3, border=True)
 
 # Total unique visitors
+st.markdown("## Data Jumlah Pengunjung")
 with col1:
-    total_unique_visitors = dfh.groupby(['user_id', 'ip_address', 'hit_day']).ngroups
-    st.metric(label="Jumlah Pengunjung Unik", value=total_unique_visitors)
+    dfh_non_zero = dfh[dfh["user_id"] > 0]
+    unique_logged_in_visitors = dfh_non_zero.groupby(['user_id', 'ip_address']).ngroups
+    zero_count = dfh[dfh["user_id"] == 0]["id"].count()
+
+    total_unique_visitors = unique_logged_in_visitors + zero_count
+    st.metric(label="Jumlah Pengunjung", value=total_unique_visitors)
 
 # Logged-in visitors (user_id > 0)
 with col2:
     dfh_non_zero = dfh[dfh["user_id"] > 0]
-    unique_logged_in_visitors = dfh_non_zero.groupby(['user_id', 'ip_address', 'hit_day']).ngroups
+    unique_logged_in_visitors = dfh_non_zero.groupby(['user_id', 'ip_address']).ngroups
     st.metric(label="Jumlah Pengunjung Login", value=unique_logged_in_visitors)
 
 # Guest visitors (user_id == 0)
 with col3:
-    dfh_zero = dfh[dfh["user_id"] == 0]
-    unique_guest_visitors = dfh_zero.groupby(['user_id', 'ip_address', 'hit_day']).ngroups
-    st.metric(label="Jumlah Pengunjung Guest", value=unique_guest_visitors)
+    #dfh_zero = dfh[dfh["user_id"] == 0]
+    #unique_guest_visitors = dfh_zero.groupby(['user_id', 'ip_address']).ngroups
+    #st.metric(label="Jumlah Pengunjung Guest", value=unique_guest_visitors)
+
+    # Count all hits for guest users without applying uniqueness
+    zero_count = dfh[dfh["user_id"] == 0]["id"].count()
+    st.metric(label="Jumlah Pengunjung Guest", value=zero_count)
 
 # Yearly metrics
 col4, col5, col6 = st.columns(3, border=True)
@@ -79,20 +88,30 @@ dfh_now = dfh[dfh["hit_time"].dt.year == current_year]
 dfh_prev = dfh[dfh["hit_time"].dt.year == previous_year]
 
 with col4:
-    total_count = dfh_now.groupby(['user_id', 'ip_address', 'hit_day']).ngroups
-    total_prev = dfh_prev.groupby(['user_id', 'ip_address', 'hit_day']).ngroups
+    non_zero_count = dfh_now[dfh_now["user_id"] > 0].groupby(['user_id', 'ip_address']).ngroups
+    non_prev_count = dfh_prev[dfh_prev["user_id"] > 0].groupby(['user_id', 'ip_address']).ngroups
+    zero_count = dfh_now[dfh_now["user_id"] == 0]["id"].count()
+    zero_prev = dfh_prev[dfh_prev["user_id"] == 0]["id"].count()
+
+    total_count = non_zero_count + zero_count
+    total_prev = non_prev_count + zero_prev
     delta = ((total_count - total_prev) / total_prev * 100) if total_prev != 0 else 0
     st.metric(label="Jumlah Pengunjung (Tahun Ini)", value=total_count, delta=f"{delta:.2f}%")
 
 with col5:
-    non_zero_count = dfh_now[dfh_now["user_id"] > 0].groupby(['user_id', 'ip_address', 'hit_day']).ngroups
-    non_prev_count = dfh_prev[dfh_prev["user_id"] > 0].groupby(['user_id', 'ip_address', 'hit_day']).ngroups
+    non_zero_count = dfh_now[dfh_now["user_id"] > 0].groupby(['user_id', 'ip_address']).ngroups
+    non_prev_count = dfh_prev[dfh_prev["user_id"] > 0].groupby(['user_id', 'ip_address']).ngroups
     delta = ((non_zero_count - non_prev_count) / non_prev_count * 100) if non_prev_count != 0 else 0
     st.metric(label="Jumlah Pengunjung Login (Tahun Ini)", value=non_zero_count, delta=f"{delta:.2f}%")
 
 with col6:
-    zero_count = dfh_now[dfh_now["user_id"] == 0].groupby(['user_id', 'ip_address', 'hit_day']).ngroups
-    zero_prev = dfh_prev[dfh_prev["user_id"] == 0].groupby(['user_id', 'ip_address', 'hit_day']).ngroups
+    #zero_count = dfh_now[dfh_now["user_id"] == 0].groupby(['user_id', 'ip_address']).ngroups
+    #zero_prev = dfh_prev[dfh_prev["user_id"] == 0].groupby(['user_id', 'ip_address']).ngroups
+
+    #count the guest witout uniqueness
+    zero_count = dfh_now[dfh_now["user_id"] == 0]["id"].count()
+    zero_prev = dfh_prev[dfh_prev["user_id"] == 0]["id"].count()
+
     delta = ((zero_count - zero_prev) / zero_prev * 100) if zero_prev != 0 else 0
     st.metric(label="Jumlah Pengunjung Guest (Tahun Ini)", value=zero_count, delta=f"{delta:.2f}%")
 
@@ -114,22 +133,39 @@ dfh_previous_month = dfh[
 ]
 
 with col7:
-    total_count = dfh_current_month.groupby(['user_id', 'ip_address', 'hit_day']).ngroups
-    total_prev = dfh_previous_month.groupby(['user_id', 'ip_address', 'hit_day']).ngroups
+    non_zero_count = dfh_current_month[dfh_current_month["user_id"] > 0].groupby(
+        ['user_id', 'ip_address']).ngroups
+    non_prev_count = dfh_previous_month[dfh_previous_month["user_id"] > 0].groupby(
+        ['user_id', 'ip_address']).ngroups
+
+    zero_count = dfh_current_month[dfh_current_month["user_id"] == 0]["id"].count()
+    zero_prev = dfh_previous_month[dfh_previous_month["user_id"] == 0]["id"].count()
+
+    total_count = non_zero_count + zero_count
+    total_prev = non_prev_count + zero_prev
     delta = ((total_count - total_prev) / total_prev * 100) if total_prev != 0 else 0
     st.metric(label="Jumlah Pengunjung (Bulan Ini)", value=total_count, delta=f"{delta:.2f}%")
 
 with col8:
-    non_zero_count = dfh_current_month[dfh_current_month["user_id"] > 0].groupby(['user_id', 'ip_address', 'hit_day']).ngroups
-    non_prev_count = dfh_previous_month[dfh_previous_month["user_id"] > 0].groupby(['user_id', 'ip_address', 'hit_day']).ngroups
+    non_zero_count = dfh_current_month[dfh_current_month["user_id"] > 0].groupby(['user_id', 'ip_address']).ngroups
+    non_prev_count = dfh_previous_month[dfh_previous_month["user_id"] > 0].groupby(['user_id', 'ip_address']).ngroups
     delta = ((non_zero_count - non_prev_count) / non_prev_count * 100) if non_prev_count != 0 else 0
     st.metric(label="Jumlah Pengunjung Login (Bulan Ini)", value=non_zero_count, delta=f"{delta:.2f}%")
 
 with col9:
-    zero_count = dfh_current_month[dfh_current_month["user_id"] == 0].groupby(['user_id', 'ip_address', 'hit_day']).ngroups
-    zero_prev = dfh_previous_month[dfh_previous_month["user_id"] == 0].groupby(['user_id', 'ip_address', 'hit_day']).ngroups
+    #zero_count = dfh_current_month[dfh_current_month["user_id"] == 0].groupby(['user_id', 'ip_address']).ngroups
+    #zero_prev = dfh_previous_month[dfh_previous_month["user_id"] == 0].groupby(['user_id', 'ip_address']).ngroups
+    #delta = ((zero_count - zero_prev) / zero_prev * 100) if zero_prev != 0 else 0
+    #st.metric(label="Jumlah Pengunjung Guest (Bulan Ini)", value=zero_count, delta=f"{delta:.2f}%")
+
+    #count guest without uniqueness
+    zero_count = dfh_current_month[dfh_current_month["user_id"] == 0]["id"].count()
+    zero_prev = dfh_previous_month[dfh_previous_month["user_id"] == 0]["id"].count()
+
+    # Avoid division by zero
     delta = ((zero_count - zero_prev) / zero_prev * 100) if zero_prev != 0 else 0
     st.metric(label="Jumlah Pengunjung Guest (Bulan Ini)", value=zero_count, delta=f"{delta:.2f}%")
+
 st.divider()
 
 # Aggregating data by date
