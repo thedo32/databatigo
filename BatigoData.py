@@ -403,6 +403,7 @@ with (tab1):
 
         st.altair_chart(bars)
 
+st.divider()
 # Geographic Heatmap by Country
 st.markdown("## Trends Secara Geografis: Analisa Menurut Negara")
 
