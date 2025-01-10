@@ -628,6 +628,7 @@ with tab2:
         st.altair_chart(bars)
 
     with colC:
+
         st.markdown("<h4 style='text-align: center;'>Top 10 diakses Luar Negeri</h4>", unsafe_allow_html=True)
 
         # Filter rows where the country is outside "Indonesia"
