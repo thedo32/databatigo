@@ -22,9 +22,19 @@ Email: databaseoutlet@gmail.com
             """}
 )
 
+
 urluser = "https://restful.kopibatigo.id/users"
 urlhit = "https://restful.kopibatigo.id/hits"
 
+# CSS to customize the delta color for Streamlit's metric component
+st.markdown("""
+    <style>
+    /* Apply custom color to Streamlit metric delta */
+    div[data-testid="stMetricDelta"] {
+        color: #A7D129 !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
 st.markdown("<h1 style='text-align: center;'>Analisa Data Kopi Batigo</h1>",unsafe_allow_html=True)
 
